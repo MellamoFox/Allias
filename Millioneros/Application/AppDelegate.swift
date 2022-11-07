@@ -3,7 +3,8 @@
 //  Millioneros
 //
 //  Created by VT on 05.11.2022.
-//
+
+// Slavomir commit 1 21:39
 
 import UIKit
 
