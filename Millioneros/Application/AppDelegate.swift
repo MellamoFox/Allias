@@ -5,6 +5,13 @@
 //  Created by VT on 05.11.2022.
 //
 
+
+// Slavomir comitt1 19:53
+
+
+
+
+
 import UIKit
 
 @main
