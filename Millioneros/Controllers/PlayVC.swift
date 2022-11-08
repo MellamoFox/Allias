@@ -27,7 +27,6 @@ class PlayVC: UIViewController {
         setDelegates()
     }
     
-    
     private func setupViews() {
         self.navigationController?.isNavigationBarHidden = true
         gradientView.translatesAutoresizingMaskIntoConstraints = false
