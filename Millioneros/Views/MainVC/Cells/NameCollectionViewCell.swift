@@ -1,9 +1,4 @@
-//
-//  NameCollectionViewCell.swift
-//  Millioneros
-//
-//  Created by VT on 05.11.2022.
-//
+
 
 import Foundation
 import UIKit
