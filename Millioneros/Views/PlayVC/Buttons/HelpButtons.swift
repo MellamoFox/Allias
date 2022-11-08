@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 var buttonsArray = [UIButton]()
 let helpButtons = ["50/50", "Call", "Mistake","Money"]
 class HelpButtons: UIButton {
@@ -26,11 +25,8 @@ class HelpButtons: UIButton {
         for _ in helpButtons {
             let button = UIButton()
             button.backgroundColor = .yellow
-            button.layer.borderColor = UIColor.white.cgColor
             button.translatesAutoresizingMaskIntoConstraints = false
             button.alpha = 1
-            button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-            button.layer.cornerRadius = 0.5 * button.bounds.size.width
             button.clipsToBounds = true
             button.setImage(UIImage(named:"thumbsUp.png"), for: .normal)
             buttonsArray.append(button)

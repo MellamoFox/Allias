@@ -28,7 +28,11 @@ class TimerSetUp: UIView {
     private func timerTrack() {
         let center = center
         let trackLayer = CAShapeLayer()
-        let circularPath = UIBezierPath(arcCenter: center, radius: 50, startAngle: 0 / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center,
+                                        radius: 30,
+                                        startAngle: 0 / 2,
+                                        endAngle: 2 * CGFloat.pi,
+                                        clockwise: true)
         trackLayer.path = circularPath.cgPath
         trackLayer.strokeColor = UIColor.lightGray.cgColor
         trackLayer.lineWidth = 10
@@ -47,5 +51,7 @@ class TimerSetUp: UIView {
         basicAnimation.fillMode = .forwards
         basicAnimation.isRemovedOnCompletion = false
         shapeLayer.add(basicAnimation, forKey: "UrSoBasic")
+        layer.addSublayer(trackLayer)
+        layer.addSublayer(shapeLayer)
     }
 }
