@@ -10,6 +10,8 @@ import UIKit
 
 class PlayVC: UIViewController {
     
+    private let setTimer = TimerSetUp()
+    private let helpButtons = HelpButtons()
     private let questionLabel = QuestionLabel()
     private let questionBrain = QuestionBrain()
     private let gradientView = GradientView()
@@ -19,12 +21,20 @@ class PlayVC: UIViewController {
     private lazy var stackView = UIStackView(arrangedSubviews: [questionLabel,collectionView],
                                              axis: .vertical,
                                              spacing: 20)
+    private lazy var stackView2 = UIStackView(arrangedSubviews: [buttonsArray[0],
+                                                buttonsArray[1],
+                                                buttonsArray[2],
+                                                buttonsArray[3]],
+                                             axis: .horizontal,
+                                              spacing: 50)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setConstraints()
         setDelegates()
+        view.backgroundColor = .lightGray
+        
     }
     
     
@@ -32,32 +42,43 @@ class PlayVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         questionLabel.text = questionBrain.getQuestion().text
-        view.addSubview(gradientView)
+        //view.addSubview(gradientView)
         view.addSubview(stackView)
+        view.addSubview(stackView2)
+        view.addSubview(setTimer)
     }
     private func setDelegates() {
         collectionView.dataSource = self
         collectionView.selectAnswerDelegate = self
     }
     private func setConstraints(){
-        NSLayoutConstraint.activate([
-            gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            gradientView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
-        ])
+        /*NSLayoutConstraint.activate([
+            gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            gradientView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            gradientView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            gradientView.topAnchor.constraint(equalTo: view.topAnchor)
+        ])*/
         NSLayoutConstraint.activate([
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -20),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 600)//set after label
+            stackView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 20)
         ])
         NSLayoutConstraint.activate([
+            stackView2.bottomAnchor.constraint(equalTo: questionLabel.topAnchor,constant: -400),
+            stackView2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            stackView2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            stackView2.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+        ])
+       
+        NSLayoutConstraint.activate([
             questionLabel.heightAnchor.constraint(equalToConstant: 100),
-            questionLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: 40),
+            questionLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: 20),
             questionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             questionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
+       
+       
     }
 }
 

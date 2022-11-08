@@ -30,6 +30,8 @@
 		77C57E2D291949A50041746B /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E2C291949A50041746B /* String + Extensions.swift */; };
 		77C57E2F29194BCB0041746B /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E2E29194BCB0041746B /* StatusLabel.swift */; };
 		77C57E31291957480041746B /* QuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E30291957480041746B /* QuestionLabel.swift */; };
+		77C57E33291A43C90041746B /* HelpButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E32291A43C90041746B /* HelpButtons.swift */; };
+		77C57E57291A6F610041746B /* TimerSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E56291A6F610041746B /* TimerSetUp.swift */; };
 		77DEB72D29169A3400CE8986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DEB72C29169A3400CE8986 /* AppDelegate.swift */; };
 		77DEB73129169A3400CE8986 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DEB73029169A3400CE8986 /* WelcomeVC.swift */; };
 		77DEB73629169A3600CE8986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77DEB73529169A3600CE8986 /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		77C57E2C291949A50041746B /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
 		77C57E2E29194BCB0041746B /* StatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusLabel.swift; sourceTree = "<group>"; };
 		77C57E30291957480041746B /* QuestionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLabel.swift; sourceTree = "<group>"; };
+		77C57E32291A43C90041746B /* HelpButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButtons.swift; sourceTree = "<group>"; };
+		77C57E56291A6F610041746B /* TimerSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetUp.swift; sourceTree = "<group>"; };
 		77DEB72929169A3400CE8986 /* Millioneros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Millioneros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DEB72C29169A3400CE8986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77DEB73029169A3400CE8986 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				77C57E12291806060041746B /* Cells */,
 				77C57E102917FC4E0041746B /* AnswerButtonCollectionView.swift */,
 				77C57E30291957480041746B /* QuestionLabel.swift */,
+				77C57E56291A6F610041746B /* TimerSetUp.swift */,
 			);
 			path = PlayVC;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 		77C57E0B2917A9290041746B /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				77C57E32291A43C90041746B /* HelpButtons.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 				77DEB72D29169A3400CE8986 /* AppDelegate.swift in Sources */,
 				77C57E03291797C90041746B /* RulesVC.swift in Sources */,
 				77C57E062917984D0041746B /* RulesTextLabel.swift in Sources */,
+				77C57E57291A6F610041746B /* TimerSetUp.swift in Sources */,
 				77C57E082917995E0041746B /* AgreeButton.swift in Sources */,
 				77C57E0F2917C7B70041746B /* GradientView.swift in Sources */,
 				77C57E2F29194BCB0041746B /* StatusLabel.swift in Sources */,
@@ -376,6 +383,7 @@
 				77C57DFD2916AEF20041746B /* RulesButton.swift in Sources */,
 				77C57E1A2918F10C0041746B /* GoOneButton.swift in Sources */,
 				77C57DF12916A6060041746B /* UIStackView + Extensions.swift in Sources */,
+				77C57E33291A43C90041746B /* HelpButtons.swift in Sources */,
 				77C57E0D2917AADB0041746B /* PlayVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
