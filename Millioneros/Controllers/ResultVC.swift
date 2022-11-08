@@ -10,11 +10,13 @@ import UIKit
 
 class ResultVC: UIViewController {
     
-    private let resultsButtons = PrizeCollectionViewCell()
+    let resultsArray = ["0","100","200","300","500","1000","2000","4000","8000","32 000","64 000","125 000","250 000","500 000","1 000 000"]
+    
     private let goOneButton = GoOneButton()
     private let gradientView = GradientView()
     private let collectionView = ResultsCollectionView(frame: .zero,
                                         collectionViewLayout: UICollectionViewFlowLayout())
+    
     private lazy var stackView = UIStackView(arrangedSubviews: [collectionView,goOneButton],
                                              axis: .vertical,
                                              spacing: 10)
@@ -54,14 +56,16 @@ class ResultVC: UIViewController {
 
 extension ResultVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        resultsButtons.resultsButtons.count
+       resultsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdPrize.idPrizeCell.rawValue, for: indexPath) as? PrizeCollectionViewCell
-        else
-        {return UICollectionViewCell()
-        }
+        else { return UICollectionViewCell() }
+        
+        cell.setupLabel(text: resultsArray[indexPath.row])
+        cell.setConstraints()
+        
         return cell
     }
 }
