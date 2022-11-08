@@ -24,7 +24,7 @@ class HelpButtons: UIButton {
     private func createButtons() {
         for _ in helpButtons {
             let button = UIButton()
-            button.backgroundColor = .yellow
+            button.backgroundColor = .black
             button.translatesAutoresizingMaskIntoConstraints = false
             button.alpha = 1
             button.clipsToBounds = true

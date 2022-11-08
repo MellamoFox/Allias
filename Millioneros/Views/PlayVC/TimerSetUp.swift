@@ -29,7 +29,7 @@ class TimerSetUp: UIView {
         let center = center
         let trackLayer = CAShapeLayer()
         let circularPath = UIBezierPath(arcCenter: center,
-                                        radius: 30,
+                                        radius: 40,
                                         startAngle: 0 / 2,
                                         endAngle: 2 * CGFloat.pi,
                                         clockwise: true)
