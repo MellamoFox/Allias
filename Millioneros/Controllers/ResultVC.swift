@@ -63,7 +63,7 @@ extension ResultVC: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdPrize.idPrizeCell.rawValue, for: indexPath) as? PrizeCollectionViewCell
         else { return UICollectionViewCell() }
         
-        cell.setupLabel(text: resultsArray[indexPath.row])
+        cell.setupLabel(text: resultsArray.reversed()[indexPath.row])
         cell.setConstraints()
         
         return cell
