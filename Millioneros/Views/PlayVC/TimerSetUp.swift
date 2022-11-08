@@ -1,5 +1,5 @@
 //
-//  Timer.swift
+//  TimerSetUp.swift
 //  Millioneros
 //
 //  Created by VT on 08.11.2022.
@@ -14,7 +14,7 @@ var timer = Timer()
 var totalTime = 30
 var secondsPassed = 0
 
-class Timer: UILabel {
+class TimerSetUp: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
