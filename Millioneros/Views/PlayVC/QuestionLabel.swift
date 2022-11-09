@@ -20,7 +20,7 @@ class QuestionLabel: UILabel {
     }
     
     private func configure() {
-        text = "Check your question here"
+        
         textColor = .red
         font = UIFont(name: "Apple SD Gohic Neo", size: 16)
         adjustsFontSizeToFitWidth = true
@@ -30,4 +30,14 @@ class QuestionLabel: UILabel {
         layer.cornerRadius = 10
         textAlignment = .center
     }
+    
 }
+extension UILabel {
+    func animation(typing value: String, duration: Double){
+        for char in value {
+            self.text?.append(char)
+            RunLoop.current.run(until: Date() + duration)
+        }
+    }
+}
+

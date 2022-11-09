@@ -29,14 +29,15 @@ class PlayVC: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
-        view.backgroundColor = .lightGray
-        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        questionLabel.animation(typing: questionBrain.getQuestion().text, duration: 0.05)
     }
     
     private func setupViews() {
         self.navigationController?.isNavigationBarHidden = true
         gradientView.translatesAutoresizingMaskIntoConstraints = false
-        questionLabel.text = questionBrain.getQuestion().text
         view.addSubview(gradientView)
         view.addSubview(stackView)
         view.addSubview(stackView2)
@@ -45,6 +46,7 @@ class PlayVC: UIViewController {
         stackView2.alignment = .fill
         stackView2.distribution = .fillEqually
         setTimer.translatesAutoresizingMaskIntoConstraints = false
+        questionLabel.text = ""
     }
     private func setDelegates() {
         collectionView.dataSource = self
