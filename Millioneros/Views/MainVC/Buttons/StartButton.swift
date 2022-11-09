@@ -8,7 +8,19 @@
 import Foundation
 import UIKit
 
+
 class StartButton: UIButton {
+    
+    public var isValid = false {
+        didSet {
+            if self.isValid {
+                setIsValid()
+            } else {
+                setNotValid()
+            }
+        }
+    }
+    
     override init(frame:CGRect) {
         super.init(frame:frame)
         
@@ -25,7 +37,17 @@ class StartButton: UIButton {
         setTitleColor(.green, for: .normal)
         layer.cornerRadius = 10
         titleLabel?.font = UIFont(name: "Avenir Bool", size: 17)
-        alpha = 0.9
+        alpha = 0.8
         translatesAutoresizingMaskIntoConstraints = false
+        isEnabled = false
+    }
+    
+     func setNotValid() {
+        isEnabled = false
+        alpha = 0.8
+    }
+     func setIsValid() {
+        isEnabled = true
+        alpha = 1
     }
 }
