@@ -39,5 +39,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
-//dfgdsfgdsfgdsfg
-// test 3

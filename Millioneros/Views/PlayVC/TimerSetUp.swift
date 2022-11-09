@@ -8,13 +8,14 @@
 import Foundation
 import UIKit
 
-let shapeLayer = CAShapeLayer()
-var timerLabel = UILabel()
-var timer = Timer()
-var totalTime = 30
-var secondsPassed = 0
-
 class TimerSetUp: UIView {
+    
+    let shapeLayer = CAShapeLayer()
+    var timerLabel = UILabel()
+    var timer = Timer()
+    var totalTime = 30
+    var secondsPassed = 0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -41,7 +42,7 @@ class TimerSetUp: UIView {
         shapeLayer.strokeColor = UIColor.yellow.cgColor
         shapeLayer.lineWidth = 10
         DispatchQueue.main.async {
-        shapeLayer.strokeEnd = CGFloat(secondsPassed / totalTime)
+            self.shapeLayer.strokeEnd = CGFloat(self.secondsPassed / self.totalTime)
         }
         shapeLayer.lineCap = .round
         shapeLayer.fillColor = UIColor.clear.cgColor

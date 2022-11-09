@@ -33,6 +33,7 @@ class ResultVC: UIViewController {
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gradientView)
         view.addSubview(stackView)
+      
     }
     private func setDelegates() {
         collectionView.dataSource = self
@@ -68,6 +69,7 @@ extension ResultVC: UICollectionViewDataSource {
         
         return cell
     }
+    
 }
 
 extension ResultVC: SelectPrizeProtocol {

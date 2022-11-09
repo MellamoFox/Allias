@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		775EB901291BCF1D00D5FAC0 /* FadeInAdnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */; };
+		775EB903291BFF5F00D5FAC0 /* AnswerButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775EB902291BFF5F00D5FAC0 /* AnswerButtons.swift */; };
 		77C57DF12916A6060041746B /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF02916A6060041746B /* UIStackView + Extensions.swift */; };
 		77C57DF32916A7430041746B /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF22916A7430041746B /* NameTextField.swift */; };
 		77C57DF52916A9060041746B /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF42916A9060041746B /* StartButton.swift */; };
@@ -19,12 +20,10 @@
 		77C57E082917995E0041746B /* AgreeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E072917995E0041746B /* AgreeButton.swift */; };
 		77C57E0D2917AADB0041746B /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E0C2917AADB0041746B /* PlayVC.swift */; };
 		77C57E0F2917C7B70041746B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E0E2917C7B70041746B /* GradientView.swift */; };
-		77C57E112917FC4E0041746B /* AnswerButtonCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E102917FC4E0041746B /* AnswerButtonCollectionView.swift */; };
 		77C57E162918EEDD0041746B /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E152918EEDD0041746B /* ResultVC.swift */; };
 		77C57E1A2918F10C0041746B /* GoOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E192918F10C0041746B /* GoOneButton.swift */; };
 		77C57E1C2918FD2F0041746B /* ResultsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E1B2918FD2F0041746B /* ResultsCollectionView.swift */; };
 		77C57E21291909130041746B /* PrizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E20291909130041746B /* PrizeCollectionViewCell.swift */; };
-		77C57E2529191E0B0041746B /* AnswersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E2429191E0B0041746B /* AnswersCollectionViewCell.swift */; };
 		77C57E29291946350041746B /* QuestionBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E28291946350041746B /* QuestionBrain.swift */; };
 		77C57E2B291946780041746B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E2A291946780041746B /* Question.swift */; };
 		77C57E2D291949A50041746B /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E2C291949A50041746B /* String + Extensions.swift */; };
@@ -40,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInAdnimation.swift; sourceTree = "<group>"; };
+		775EB902291BFF5F00D5FAC0 /* AnswerButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButtons.swift; sourceTree = "<group>"; };
 		77C57DF02916A6060041746B /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		77C57DF22916A7430041746B /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		77C57DF42916A9060041746B /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
@@ -51,12 +51,10 @@
 		77C57E072917995E0041746B /* AgreeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeButton.swift; sourceTree = "<group>"; };
 		77C57E0C2917AADB0041746B /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
 		77C57E0E2917C7B70041746B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		77C57E102917FC4E0041746B /* AnswerButtonCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButtonCollectionView.swift; sourceTree = "<group>"; };
 		77C57E152918EEDD0041746B /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		77C57E192918F10C0041746B /* GoOneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoOneButton.swift; sourceTree = "<group>"; };
 		77C57E1B2918FD2F0041746B /* ResultsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCollectionView.swift; sourceTree = "<group>"; };
 		77C57E20291909130041746B /* PrizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeCollectionViewCell.swift; sourceTree = "<group>"; };
-		77C57E2429191E0B0041746B /* AnswersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersCollectionViewCell.swift; sourceTree = "<group>"; };
 		77C57E28291946350041746B /* QuestionBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBrain.swift; sourceTree = "<group>"; };
 		77C57E2A291946780041746B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		77C57E2C291949A50041746B /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
@@ -151,8 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				77C57E0B2917A9290041746B /* Buttons */,
-				77C57E12291806060041746B /* Cells */,
-				77C57E102917FC4E0041746B /* AnswerButtonCollectionView.swift */,
 				77C57E30291957480041746B /* QuestionLabel.swift */,
 				77C57E56291A6F610041746B /* TimerSetUp.swift */,
 			);
@@ -163,16 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				77C57E32291A43C90041746B /* HelpButtons.swift */,
+				775EB902291BFF5F00D5FAC0 /* AnswerButtons.swift */,
 			);
 			path = Buttons;
-			sourceTree = "<group>";
-		};
-		77C57E12291806060041746B /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				77C57E2429191E0B0041746B /* AnswersCollectionViewCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		77C57E172918F08C0041746B /* ResultsVC */ = {
@@ -361,9 +350,8 @@
 				77C57E1C2918FD2F0041746B /* ResultsCollectionView.swift in Sources */,
 				77C57DFF2916AF370041746B /* ScoresButton.swift in Sources */,
 				77C57E162918EEDD0041746B /* ResultVC.swift in Sources */,
+				775EB903291BFF5F00D5FAC0 /* AnswerButtons.swift in Sources */,
 				77C57DF52916A9060041746B /* StartButton.swift in Sources */,
-				77C57E2529191E0B0041746B /* AnswersCollectionViewCell.swift in Sources */,
-				77C57E112917FC4E0041746B /* AnswerButtonCollectionView.swift in Sources */,
 				77DEB73129169A3400CE8986 /* WelcomeVC.swift in Sources */,
 				77C57E012916B3190041746B /* NameCollectionViewCell.swift in Sources */,
 				77C57E2D291949A50041746B /* String + Extensions.swift in Sources */,

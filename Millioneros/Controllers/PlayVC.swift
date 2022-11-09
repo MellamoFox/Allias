@@ -11,24 +11,25 @@ class PlayVC: UIViewController {
     
     private let setTimer = TimerSetUp()
     private let helpButtons = HelpButtons()
+    private let answerButtons = AnswerButtons()
     private let questionLabel = QuestionLabel()
     private let questionBrain = QuestionBrain()
     private let gradientView = GradientView()
-    private let answerButtons = AnswersCollectionViewCell()
-    private let collectionView = AnswerButtonCollectionView(frame: .zero,
-                                            collectionViewLayout: UICollectionViewFlowLayout())
-    private lazy var stackView = UIStackView(arrangedSubviews: [collectionView],
+    
+    private lazy var stackView = UIStackView(arrangedSubviews: [answerButtonsArray[0],answerButtonsArray[1]],
                                              axis: .vertical,
                                              spacing: 20)
-    private lazy var stackView2 = UIStackView(arrangedSubviews: buttonsArray,
+    private lazy var stackView2 = UIStackView(arrangedSubviews: [answerButtonsArray[2],answerButtonsArray[3]],
+                                             axis: .vertical,
+                                             spacing: 20)
+    private lazy var stackView3 = UIStackView(arrangedSubviews: helpButtonsArray,
                                              axis: .horizontal,
                                              spacing: 20)
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setConstraints()
-        setDelegates()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -41,16 +42,17 @@ class PlayVC: UIViewController {
         view.addSubview(gradientView)
         view.addSubview(stackView)
         view.addSubview(stackView2)
+        view.addSubview(stackView3)
         view.addSubview(setTimer)
         view.addSubview(questionLabel)
+        stackView.alignment = .fill
+        stackView.distribution = .fillProportionally
         stackView2.alignment = .fill
         stackView2.distribution = .fillEqually
+        stackView3.alignment = .fill
+        stackView3.distribution = .fillEqually
         setTimer.translatesAutoresizingMaskIntoConstraints = false
         questionLabel.text = ""
-    }
-    private func setDelegates() {
-        collectionView.dataSource = self
-        collectionView.selectAnswerDelegate = self
     }
     private func setConstraints(){
         NSLayoutConstraint.activate([
@@ -65,47 +67,36 @@ class PlayVC: UIViewController {
          
         ])
         NSLayoutConstraint.activate([
-            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: 20),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -20),
+            stackView.heightAnchor.constraint(equalToConstant: 120),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
-            stackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2)
-
+            stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.45)
         ])
         NSLayoutConstraint.activate([
+            stackView2.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -20),
+            stackView2.heightAnchor.constraint(equalToConstant: 120),
+            stackView2.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
+            stackView2.leadingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 20)
+   
+        ])
+        NSLayoutConstraint.activate([
+            questionLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor,constant: -20),
             questionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
             questionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
-            questionLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor,constant: -20),
-            questionLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2)
+            questionLabel.heightAnchor.constraint(equalToConstant: 100)
         ])
         NSLayoutConstraint.activate([
-            stackView2.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 20),
-            stackView2.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
-            stackView2.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
-            stackView2.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05)
+            stackView3.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 20),
+            stackView3.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            stackView3.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            stackView3.heightAnchor.constraint(equalToConstant: 100),
+            stackView3.widthAnchor.constraint(equalToConstant: 100)
+
         ])
     }
 }
 
-extension PlayVC: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        answerButtons.answerButtons.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdAnswer.idAnswerCell.rawValue, for: indexPath) as? AnswersCollectionViewCell
-        else
-        {return UICollectionViewCell()
-        }
-        let answerChoices = questionBrain.getQuestion().answers
-        cell.answerButtonCellConfigure(answerButtonText: answerChoices[indexPath.row])
-        return cell
-    }
-    
-}
 
-extension PlayVC: SelectAnswerProtocol {
-    func selectAnswer(indexPath: IndexPath) {
-        print(indexPath)
-    }
-}
+
+
 
