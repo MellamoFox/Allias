@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		775EB901291BCF1D00D5FAC0 /* FadeInAdnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */; };
 		77C57DF12916A6060041746B /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF02916A6060041746B /* UIStackView + Extensions.swift */; };
 		77C57DF32916A7430041746B /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF22916A7430041746B /* NameTextField.swift */; };
 		77C57DF52916A9060041746B /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF42916A9060041746B /* StartButton.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInAdnimation.swift; sourceTree = "<group>"; };
 		77C57DF02916A6060041746B /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		77C57DF22916A7430041746B /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		77C57DF42916A9060041746B /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				77C57DEF2916A5DF0041746B /* UIKit */,
 				77C57E2C291949A50041746B /* String + Extensions.swift */,
 				77C57E0E2917C7B70041746B /* GradientView.swift */,
+				775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				77DEB73129169A3400CE8986 /* WelcomeVC.swift in Sources */,
 				77C57E012916B3190041746B /* NameCollectionViewCell.swift in Sources */,
 				77C57E2D291949A50041746B /* String + Extensions.swift in Sources */,
+				775EB901291BCF1D00D5FAC0 /* FadeInAdnimation.swift in Sources */,
 				77C57E2B291946780041746B /* Question.swift in Sources */,
 				77C57E31291957480041746B /* QuestionLabel.swift in Sources */,
 				77DEB72D29169A3400CE8986 /* AppDelegate.swift in Sources */,
