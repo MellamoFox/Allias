@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E8596B5291CE53B00127CB3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8596B4291CE53B00127CB3 /* Settings.swift */; };
+		3E8596B7291CE57200127CB3 /* UserDefaults + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8596B6291CE57200127CB3 /* UserDefaults + extension.swift */; };
+		3E8DC9F5291CC9AD0097C091 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8DC9F4291CC9AD0097C091 /* ContinueButton.swift */; };
+		3E90DA60291BED5400D0CB4D /* ScoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E90DA5F291BED5400D0CB4D /* ScoresVC.swift */; };
+		3E90DA62291BEE6D00D0CB4D /* ScoresTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E90DA61291BEE6D00D0CB4D /* ScoresTableView.swift */; };
+		3EA29007291BF08E00B5159F /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA29006291BF08E00B5159F /* ScoreTableViewCell.swift */; };
 		77C57DF12916A6060041746B /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF02916A6060041746B /* UIStackView + Extensions.swift */; };
 		77C57DF32916A7430041746B /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF22916A7430041746B /* NameTextField.swift */; };
 		77C57DF52916A9060041746B /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF42916A9060041746B /* StartButton.swift */; };
@@ -37,6 +43,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E8596B4291CE53B00127CB3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		3E8596B6291CE57200127CB3 /* UserDefaults + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + extension.swift"; sourceTree = "<group>"; };
+		3E8DC9F4291CC9AD0097C091 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
+		3E90DA5F291BED5400D0CB4D /* ScoresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresVC.swift; sourceTree = "<group>"; };
+		3E90DA61291BEE6D00D0CB4D /* ScoresTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresTableView.swift; sourceTree = "<group>"; };
+		3EA29006291BF08E00B5159F /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		77C57DF02916A6060041746B /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		77C57DF22916A7430041746B /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		77C57DF42916A9060041746B /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
@@ -79,6 +91,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E8DC9F3291CC96D0097C091 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				3E8DC9F4291CC9AD0097C091 /* ContinueButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		3E90DA5C291BEBE300D0CB4D /* ScoresVC */ = {
+			isa = PBXGroup;
+			children = (
+				3E8DC9F3291CC96D0097C091 /* Buttons */,
+				3EA29008291BF42400B5159F /* Cells */,
+				3E90DA61291BEE6D00D0CB4D /* ScoresTableView.swift */,
+			);
+			path = ScoresVC;
+			sourceTree = "<group>";
+		};
+		3EA29008291BF42400B5159F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3EA29006291BF08E00B5159F /* ScoreTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		77C57DEB2916A1D70041746B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +130,7 @@
 				77C57DEF2916A5DF0041746B /* UIKit */,
 				77C57E2C291949A50041746B /* String + Extensions.swift */,
 				77C57E0E2917C7B70041746B /* GradientView.swift */,
+				3E8596B6291CE57200127CB3 /* UserDefaults + extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,13 +234,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		77C57E2329191D270041746B /* ScoresVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ScoresVC;
-			sourceTree = "<group>";
-		};
 		77DEB72029169A3400CE8986 = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +276,7 @@
 			children = (
 				77C57E28291946350041746B /* QuestionBrain.swift */,
 				77C57E2A291946780041746B /* Question.swift */,
+				3E8596B4291CE53B00127CB3 /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,6 +288,7 @@
 				77C57E02291797C90041746B /* RulesVC.swift */,
 				77C57E0C2917AADB0041746B /* PlayVC.swift */,
 				77C57E152918EEDD0041746B /* ResultVC.swift */,
+				3E90DA5F291BED5400D0CB4D /* ScoresVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -265,8 +299,8 @@
 				77C57DFB2916AECE0041746B /* MainVC */,
 				77C57E0A2917A8FE0041746B /* PlayVC */,
 				77C57E172918F08C0041746B /* ResultsVC */,
-				77C57E2329191D270041746B /* ScoresVC */,
 				77C57E04291798150041746B /* RulesVC */,
+				3E90DA5C291BEBE300D0CB4D /* ScoresVC */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -354,10 +388,13 @@
 			files = (
 				77C57E1C2918FD2F0041746B /* ResultsCollectionView.swift in Sources */,
 				77C57DFF2916AF370041746B /* ScoresButton.swift in Sources */,
+				3EA29007291BF08E00B5159F /* ScoreTableViewCell.swift in Sources */,
 				77C57E162918EEDD0041746B /* ResultVC.swift in Sources */,
 				77C57E1E291907AB0041746B /* StartScreenCollectionView.swift in Sources */,
 				77C57DF52916A9060041746B /* StartButton.swift in Sources */,
+				3E90DA62291BEE6D00D0CB4D /* ScoresTableView.swift in Sources */,
 				77C57E2529191E0B0041746B /* AnswersCollectionViewCell.swift in Sources */,
+				3E8DC9F5291CC9AD0097C091 /* ContinueButton.swift in Sources */,
 				77C57E112917FC4E0041746B /* AnswerButtonCollectionView.swift in Sources */,
 				77DEB73129169A3400CE8986 /* WelcomeVC.swift in Sources */,
 				77C57E012916B3190041746B /* NameCollectionViewCell.swift in Sources */,
@@ -373,10 +410,13 @@
 				77C57E29291946350041746B /* QuestionBrain.swift in Sources */,
 				77C57E21291909130041746B /* PrizeCollectionViewCell.swift in Sources */,
 				77C57DF32916A7430041746B /* NameTextField.swift in Sources */,
+				3E8596B5291CE53B00127CB3 /* Settings.swift in Sources */,
+				3E8596B7291CE57200127CB3 /* UserDefaults + extension.swift in Sources */,
 				77C57DFD2916AEF20041746B /* RulesButton.swift in Sources */,
 				77C57E1A2918F10C0041746B /* GoOneButton.swift in Sources */,
 				77C57DF12916A6060041746B /* UIStackView + Extensions.swift in Sources */,
 				77C57E0D2917AADB0041746B /* PlayVC.swift in Sources */,
+				3E90DA60291BED5400D0CB4D /* ScoresVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

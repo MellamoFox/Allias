@@ -17,32 +17,56 @@ class PrizeCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame:frame)
+    private let nameLabel: UILabel = {
         
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupLabel(text: String) {
+        let label = UILabel()
+        label.font = UIFont(name: "Apple SD Gothic Neo", size: 16)
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
         
+    }()
+    
+    
+    func setupPrizeLabel(text: String) {
         prizeLabel.text = text
-      
-        contentView.backgroundColor = .blue
-        contentView.alpha = 0.5
-        contentView.layer.cornerRadius = 10
         addSubview(prizeLabel)
     }
     
-}
-
-extension PrizeCollectionViewCell {
-    func setConstraints() {
+    
+    func setupNameLabel(text: String) {
+        nameLabel.text = text
+        addSubview(nameLabel)
+    }
+    
+    func setConstraint() {
+        
         NSLayoutConstraint.activate([
-            prizeLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            prizeLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+            
+            prizeLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 250),
+            prizeLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
+            prizeLabel.widthAnchor.constraint(equalToConstant: 80),
+            prizeLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor),
+            
+            nameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 50),
+            nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
+            nameLabel.widthAnchor.constraint(equalToConstant: 80),
+            nameLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor)
+        
         ])
+        
+    }
+
+    func configureContentView() {
+        
+        contentView.backgroundColor = .blue
+        contentView.alpha = 0.5
+        contentView.layer.cornerRadius = 10
+        
     }
 }
+    
+
+
+
+

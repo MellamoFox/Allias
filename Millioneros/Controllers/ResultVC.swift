@@ -12,10 +12,12 @@ class ResultVC: UIViewController {
     
     let resultsArray = ["0","100","200","300","500","1000","2000","4000","8000","32 000","64 000","125 000","250 000","500 000","1 000 000"]
     
+    let arrayUserDefaults = [51, 100, 2, 390, 548, 163, 0, 405, 809, 320, 64, 125, 250, 52, 100]
+    
     private let goOneButton = GoOneButton()
     private let gradientView = GradientView()
     private let collectionView = ResultsCollectionView(frame: .zero,
-                                        collectionViewLayout: UICollectionViewFlowLayout())
+                                                       collectionViewLayout: UICollectionViewFlowLayout())
     
     private lazy var stackView = UIStackView(arrangedSubviews: [collectionView,goOneButton],
                                              axis: .vertical,
@@ -23,12 +25,17 @@ class ResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let settings = Settings(name: "Name", recordsArray: arrayUserDefaults)
+        UserDefaults.standard.set(encodable: settings, forKey: "settings")
+        
         setupViews()
         setConstraints()
         setDelegates()
-       
+        
     }
     private func setupViews() {
+        
         self.navigationController?.isNavigationBarHidden = true
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gradientView)
@@ -56,15 +63,21 @@ class ResultVC: UIViewController {
 
 extension ResultVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       resultsArray.count
+        resultsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdPrize.idPrizeCell.rawValue, for: indexPath) as? PrizeCollectionViewCell
         else { return UICollectionViewCell() }
         
-        cell.setupLabel(text: resultsArray[indexPath.row])
-        cell.setConstraints()
+        guard let settin = UserDefaults.standard.value(Settings.self, forKey: "settings") else { return UICollectionViewCell() }
+        let sortArray = (settin.recordsArray.sorted())
+        
+        cell.configureContentView()
+        cell.setupPrizeLabel(text: "\(sortArray[indexPath.row])")
+        
+        cell.setupNameLabel(text: "Name")
+        cell.setConstraint()
         
         return cell
     }
