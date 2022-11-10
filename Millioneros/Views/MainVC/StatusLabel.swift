@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class StatusLabel: UILabel {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -20,10 +21,11 @@ class StatusLabel: UILabel {
     }
     
     private func configure() {
-        text = "Check your name"
-        textColor = .red
+        text = "Укажите свое имя"
+        textColor = .black
         font = UIFont(name: "Apple SD Gohic Neo", size: 16)
         adjustsFontSizeToFitWidth = true
         translatesAutoresizingMaskIntoConstraints = false
     }
+
 }

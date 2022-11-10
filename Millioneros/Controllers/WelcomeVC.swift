@@ -1,4 +1,5 @@
 //
+//MARK - NEw Ficha test
 //  ViewController.swift
 //  Millioneros
 //
@@ -16,6 +17,8 @@ class WelcomeVC: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    private let validityType: String.ValidityType = .name
     private let statusLabel = StatusLabel()
     private let nameTextField = NameTextField()
     private let startButton = StartButton()
@@ -32,10 +35,9 @@ class WelcomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        setDelegates()
         setConstraints()
+
     }
-    
     
     private func setupViews() {
         view.addSubview(backgroundImageView)
@@ -44,23 +46,20 @@ class WelcomeVC: UIViewController {
         startButton.addTarget(self, action: #selector(playerMakeChoice), for: .touchUpInside)
         rulesButton.addTarget(self, action: #selector(playerMakeChoice), for: .touchUpInside)
         scoresButton.addTarget(self, action: #selector(playerMakeChoice), for: .touchUpInside)
-        
+        nameTextField.addTarget(self, action: #selector(inputTextChange), for: .editingChanged)
     }
     
-    private func setDelegates() {
-        nameTextField.textFieldDelegate = self
-    }
     @objc private func playerMakeChoice(_ sender: UIButton) {
         let userChoice = sender.currentTitle
         switch userChoice {
         case rulesButton.title(for: .normal)! :
             let rulesVC = RulesVC()
-            print(rulesButton.title(for: .normal)!)
+            userResults = true
             navigationController?.pushViewController(rulesVC, animated: true)
         case startButton.title(for: .normal)! :
             let playVC = PlayVC()
             print(startButton.title(for: .normal)!)
-            navigationController?.pushViewController(playVC, animated: true)
+            self.navigationController?.pushViewController(playVC, animated: true)
 //MARK: - temp for testinc score VC as stackView
         case scoresButton.title(for: .normal)! :
             let resultVC = ScoresVC()
@@ -69,36 +68,18 @@ class WelcomeVC: UIViewController {
         default: print("unnormal choose")
         }
     }
-    
-}
-
-//MARK: - UICollectionViewDataSource
-
-extension WelcomeVC: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdCell.idNameCell.rawValue, for: indexPath ) as? NameCollectionViewCell
-        else {
-            return UICollectionViewCell()
-        }
-        return cell
-    }
-    
-}
-
-
-//MARK: -
-
-extension WelcomeVC: ActionsNameTextFieldProtocol {
-    func typingText(text: String) {
+    @objc func inputTextChange() {
+        guard let text = nameTextField.text else { return }
         print(text)
-    }
-    
-    func cleanOutTextField() {
-        print("clear")
+            if text.isValid(validityType){
+                startButton.setIsValid()
+                statusLabel.textColor = .green
+                statusLabel.text = "Приятно познакомиться \(text)"
+            } else {
+                startButton.setNotValid()
+                statusLabel.textColor = .red
+                statusLabel.text = "Пожалуйста, используйте латинские буквы и цифры"
+            }
     }
 }
 
@@ -111,7 +92,6 @@ extension WelcomeVC {
             backgroundImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         NSLayoutConstraint.activate([
-            statusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             statusLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor,constant: -20),
             statusLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
             statusLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20)
@@ -121,8 +101,7 @@ extension WelcomeVC {
             nameTextField.heightAnchor.constraint(equalToConstant: 50),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -200),
         ])
     }
 }

@@ -12,8 +12,7 @@ class ResultVC: UIViewController {
     
     let resultsArray = ["0","100","200","300","500","1000","2000","4000","8000","32 000","64 000","125 000","250 000","500 000","1 000 000"]
     
-    let arrayUserDefaults = [51, 100, 2, 390, 548, 163, 0, 405, 809, 320, 64, 125, 250, 52, 100]
-    
+
     private let goOneButton = GoOneButton()
     private let gradientView = GradientView()
     private let collectionView = ResultsCollectionView(frame: .zero,
@@ -23,12 +22,10 @@ class ResultVC: UIViewController {
                                              axis: .vertical,
                                              spacing: 10)
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let settings = Settings(name: "Name", recordsArray: arrayUserDefaults)
-        UserDefaults.standard.set(encodable: settings, forKey: "settings")
-        
+   
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkUserResults()
         setupViews()
         setConstraints()
         setDelegates()
@@ -40,7 +37,25 @@ class ResultVC: UIViewController {
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gradientView)
         view.addSubview(stackView)
+        goOneButton.addTarget(self, action: #selector(userDecide), for: .touchUpInside)
+      
     }
+    func checkUserResults() {
+        switch userResults {
+        case false : goOneButton.setTitle("Попробовать еще", for: .normal)
+        case true : goOneButton.setTitle("Продолжить", for: .normal)
+        }
+    }
+    @objc private func userDecide(_ sender: UIButton) {
+        switch userResults {
+        case true:
+            _ = navigationController?.popViewController(animated: true)
+        default :
+            print("GameOver")
+
+        }
+    }
+    
     private func setDelegates() {
         collectionView.dataSource = self
         collectionView.selectPrizeDelegate = self
@@ -70,6 +85,7 @@ extension ResultVC: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdPrize.idPrizeCell.rawValue, for: indexPath) as? PrizeCollectionViewCell
         else { return UICollectionViewCell() }
         
+
         guard let settin = UserDefaults.standard.value(Settings.self, forKey: "settings") else { return UICollectionViewCell() }
         let sortArray = (settin.recordsArray.sorted())
         
@@ -78,9 +94,12 @@ extension ResultVC: UICollectionViewDataSource {
         
         cell.setupNameLabel(text: "Name")
         cell.setConstraint()
+        cell.setupLabel(text: resultsArray.reversed()[indexPath.row])
+        cell.setConstraints()
         
         return cell
     }
+    
 }
 
 extension ResultVC: SelectPrizeProtocol {
