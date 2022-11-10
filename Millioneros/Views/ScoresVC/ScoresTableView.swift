@@ -1,5 +1,3 @@
-
-
 import UIKit
 
 class ScoresTableView: UITableView {
@@ -16,13 +14,12 @@ class ScoresTableView: UITableView {
         
     }
     
-    
     private func configureTableView() {
         
         register(ScoreTableViewCell.self, forCellReuseIdentifier: "ScoreTableViewCell")
         
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .none
+        backgroundColor = .clear
         
     }
 }
