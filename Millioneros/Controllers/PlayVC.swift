@@ -68,29 +68,28 @@ class PlayVC: UIViewController {
         ])
         NSLayoutConstraint.activate([
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -20),
-            stackView.heightAnchor.constraint(equalToConstant: 120),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
-            stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.45)
+            stackView.heightAnchor.constraint(equalToConstant: 100),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: view.centerXAnchor,constant: -10)
         ])
         NSLayoutConstraint.activate([
             stackView2.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -20),
-            stackView2.heightAnchor.constraint(equalToConstant: 120),
-            stackView2.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
-            stackView2.leadingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 20)
-   
+            stackView2.heightAnchor.constraint(equalToConstant: 100),
+            stackView2.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            stackView2.leadingAnchor.constraint(equalTo: stackView.trailingAnchor,constant: 10)
         ])
         NSLayoutConstraint.activate([
-            questionLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor,constant: -20),
+            questionLabel.bottomAnchor.constraint(equalTo: stackView2.topAnchor,constant: -20),
             questionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
             questionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
-            questionLabel.heightAnchor.constraint(equalToConstant: 100)
+            questionLabel.heightAnchor.constraint(equalToConstant: 80)
         ])
         NSLayoutConstraint.activate([
             stackView3.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 20),
             stackView3.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
             stackView3.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
-            stackView3.heightAnchor.constraint(equalToConstant: 100),
-            stackView3.widthAnchor.constraint(equalToConstant: 100)
+            stackView3.heightAnchor.constraint(equalToConstant: 50),
+            stackView3.widthAnchor.constraint(equalToConstant: 50)
 
         ])
     }
