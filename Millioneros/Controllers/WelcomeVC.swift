@@ -36,6 +36,7 @@ class WelcomeVC: UIViewController {
         super.viewDidLoad()
         setupViews()
         setConstraints()
+
     }
     
     private func setupViews() {
@@ -53,12 +54,12 @@ class WelcomeVC: UIViewController {
         switch userChoice {
         case rulesButton.title(for: .normal)! :
             let rulesVC = RulesVC()
-            print(rulesButton.title(for: .normal)!)
+            userResults = true
             navigationController?.pushViewController(rulesVC, animated: true)
         case startButton.title(for: .normal)! :
             let playVC = PlayVC()
             print(startButton.title(for: .normal)!)
-            navigationController?.pushViewController(playVC, animated: true)
+            self.navigationController?.pushViewController(playVC, animated: true)
 //MARK: - temp for testinc score VC as stackView
         case scoresButton.title(for: .normal)! :
             let resultVC = ResultVC()

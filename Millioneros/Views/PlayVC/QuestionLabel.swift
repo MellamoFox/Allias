@@ -21,14 +21,20 @@ class QuestionLabel: UILabel {
     
     private func configure() {
         
-        textColor = .red
-        font = UIFont(name: "Apple SD Gohic Neo", size: 16)
+        textColor = .white
+        font = UIFont(name: "Arial Bold", size: 16)
         adjustsFontSizeToFitWidth = true
         translatesAutoresizingMaskIntoConstraints = false
         numberOfLines = 0
-        backgroundColor = .white
         layer.cornerRadius = 10
         textAlignment = .center
+        alpha = 0.9
+        text = ""
+        numberOfLines = 0
+        layer.borderWidth = 2
+        layer.borderColor =  UIColor.white.cgColor
+    
+
     }
     
 }

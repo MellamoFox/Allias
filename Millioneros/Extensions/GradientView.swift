@@ -40,7 +40,7 @@ class GradientView: UIView {
     // configure the view for horizontal gradient
 
     private func configure() {
-        colors = [.blue, .yellow]
+        colors = [.systemBlue, .yellow]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 1)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 0)
     }

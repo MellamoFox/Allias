@@ -7,14 +7,19 @@
 
 import UIKit
 
+var yourWin = 0
+var userResults = true
+
 class PlayVC: UIViewController {
     
     private let setTimer = TimerSetUp()
     private let helpButtons = HelpButtons()
     private let answerButtons = AnswerButtons()
     private let questionLabel = QuestionLabel()
-    private let questionBrain = QuestionBrain()
+    private var questionBrain = QuestionBrain()
     private let gradientView = GradientView()
+    private let resultVC = ResultVC()
+    
     
     private lazy var stackView = UIStackView(arrangedSubviews: [answerButtonsArray[0],answerButtonsArray[1]],
                                              axis: .vertical,
@@ -29,11 +34,19 @@ class PlayVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupButtonsAction()
+        setupHelpButtonsAction()
+        setStackViews()
         setConstraints()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        setAnswerTitles()
+        questionLabel.text = ""
         questionLabel.animation(typing: questionBrain.getQuestion().text, duration: 0.05)
+        view.addSubview(setTimer)
+        setTimerConstraints()
     }
     
     private func setupViews() {
@@ -43,8 +56,32 @@ class PlayVC: UIViewController {
         view.addSubview(stackView)
         view.addSubview(stackView2)
         view.addSubview(stackView3)
-        view.addSubview(setTimer)
         view.addSubview(questionLabel)
+    }
+    
+    private func setupButtonsAction() {
+        for i in answerButtonsArray {
+            i.addTarget(self, action: #selector(answerButtonTapped), for: .touchUpInside)
+        }
+    }
+    
+    private func setupHelpButtonsAction() {
+        for i in helpButtonsArray {
+            i.addTarget(self, action: #selector(helpButtonTapped), for: .touchUpInside)
+        }
+    }
+    
+    private func setAnswerTitles() {
+        for i in 0..<4 {
+                let answer = questionBrain.getQuestion().answers
+                answerButtonsArray[i].setTitle("\(answer[i])", for: .normal)
+                answerButtonsArray[i].backgroundColor = .none
+                answerButtonsArray[i].setTitleColor(.white, for: .normal)
+        }
+    }
+   
+    
+    private func setStackViews() {
         stackView.alignment = .fill
         stackView.distribution = .fillProportionally
         stackView2.alignment = .fill
@@ -52,7 +89,51 @@ class PlayVC: UIViewController {
         stackView3.alignment = .fill
         stackView3.distribution = .fillEqually
         setTimer.translatesAutoresizingMaskIntoConstraints = false
-        questionLabel.text = ""
+        
+    }
+    
+    @objc private func helpButtonTapped(_ sender: UIButton) {
+        sender.isEnabled = false
+        sender.alpha = 0.5
+    }
+    
+    @objc private func answerButtonTapped(_ sender: UIButton) {
+        sender.backgroundColor = .yellow
+        sender.setTitleColor(.black, for: .normal)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { [self] in
+            let userAnswer = sender.currentTitle
+            let userGotItRight = self.questionBrain.checkAnswer(userAnswer: userAnswer!)
+            if userGotItRight {
+                yourWin = questionBrain.winArray[questionBrain.questionNumber]
+                print(yourWin)
+                sender.backgroundColor = .green
+                yourWin = questionBrain.winArray[questionBrain.questionNumber]
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+                    self.navigationController?.pushViewController(self.resultVC, animated: true)
+                    self.questionBrain.nextQuestion()
+                })
+                } else {
+                userResults = false
+                sender.backgroundColor = .red
+                switch yourWin {
+                case 32000..<1000000 : yourWin = questionBrain.winArray[9]
+                case 1000..<32000 : yourWin = questionBrain.winArray[5]
+                default : yourWin = 0
+                }
+                print(yourWin)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { [self] in
+                    navigationController?.pushViewController(resultVC, animated: true)
+                })
+            }
+        })
+    }
+    
+    private func setTimerConstraints(){
+        NSLayoutConstraint.activate([
+            setTimer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            setTimer.bottomAnchor.constraint(equalTo: stackView3.topAnchor,constant: -70),
+            
+        ])
     }
     private func setConstraints(){
         NSLayoutConstraint.activate([
@@ -60,11 +141,6 @@ class PlayVC: UIViewController {
             gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradientView.topAnchor.constraint(equalTo: view.topAnchor)
-        ])
-        NSLayoutConstraint.activate([
-            setTimer.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            setTimer.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor,constant: -50)
-         
         ])
         NSLayoutConstraint.activate([
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -20),
@@ -85,17 +161,11 @@ class PlayVC: UIViewController {
             questionLabel.heightAnchor.constraint(equalToConstant: 80)
         ])
         NSLayoutConstraint.activate([
-            stackView3.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 20),
+            stackView3.bottomAnchor.constraint(equalTo: questionLabel.topAnchor, constant: -20),
             stackView3.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
             stackView3.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             stackView3.heightAnchor.constraint(equalToConstant: 50),
-            stackView3.widthAnchor.constraint(equalToConstant: 50)
 
         ])
     }
 }
-
-
-
-
-

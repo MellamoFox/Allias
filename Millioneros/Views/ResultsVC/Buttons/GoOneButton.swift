@@ -26,5 +26,6 @@ class GoOneButton: UIButton {
         titleLabel?.font = UIFont(name: "Avenir Bool", size: 17)
         alpha = 1
         translatesAutoresizingMaskIntoConstraints = false
+        
     }
 }

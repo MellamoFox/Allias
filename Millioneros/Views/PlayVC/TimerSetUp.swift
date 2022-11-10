@@ -30,7 +30,7 @@ class TimerSetUp: UIView {
         let center = center
         let trackLayer = CAShapeLayer()
         let circularPath = UIBezierPath(arcCenter: center,
-                                        radius: 40,
+                                        radius: 30,
                                         startAngle: 0 / 2,
                                         endAngle: 2 * CGFloat.pi,
                                         clockwise: true)
@@ -54,5 +54,7 @@ class TimerSetUp: UIView {
         shapeLayer.add(basicAnimation, forKey: "UrSoBasic")
         layer.addSublayer(trackLayer)
         layer.addSublayer(shapeLayer)
+        translatesAutoresizingMaskIntoConstraints = false
+
     }
 }

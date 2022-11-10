@@ -28,11 +28,13 @@ class HelpButtons: UIButton {
             button.translatesAutoresizingMaskIntoConstraints = false
             button.alpha = 1
             button.clipsToBounds = true
-            button.setImage(UIImage(named:"thumbsUp.png"), for: .normal)
-            helpButtonsArray.append(button)
             button.layer.cornerRadius = 10
+            button.titleLabel?.font = UIFont(name: "Arial Bold", size: 16)
+            button.layer.borderWidth = 2
+            button.layer.borderColor =  UIColor.white.cgColor
             button.setTitle(i, for: .normal)
             button.setTitleColor(.white, for: .normal)
+            helpButtonsArray.append(button)
         }
     }
 }

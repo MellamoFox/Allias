@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 
 var answerButtonsArray = [UIButton]()
-let answerButtons = ["D:", "C:", "B:","D:"]
+let questionBrain = QuestionBrain()
 
 class AnswerButtons: UIButton {
+    
+    
     override init(frame:CGRect) {
         super.init(frame:frame)
         createButtons()
@@ -21,18 +23,19 @@ class AnswerButtons: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createButtons() {
-        for i in answerButtons {
+     func createButtons() {
+         for _ in 0..<4 {
             let button = UIButton()
-            button.backgroundColor = .black
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.alpha = 1
+            button.alpha = 0.9
             button.clipsToBounds = true
-            button.setImage(UIImage(named:"thumbsUp.png"), for: .normal)
             answerButtonsArray.append(button)
             button.layer.cornerRadius = 10
-            button.setTitle(i, for: .normal)
             button.setTitleColor(.white, for: .normal)
+            button.titleLabel?.font = UIFont(name: "Arial Bold", size: 16)
+            button.layer.borderWidth = 2
+            button.layer.borderColor =  UIColor.white.cgColor
+            button.titleLabel?.numberOfLines = 0
         }
     }
 }
