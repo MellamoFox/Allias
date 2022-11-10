@@ -16,21 +16,23 @@ class ResultVC: UIViewController {
     private let goOneButton = GoOneButton()
     private let gradientView = GradientView()
     private let collectionView = ResultsCollectionView(frame: .zero,
-                                        collectionViewLayout: UICollectionViewFlowLayout())
+                                                       collectionViewLayout: UICollectionViewFlowLayout())
     
     private lazy var stackView = UIStackView(arrangedSubviews: [collectionView,goOneButton],
                                              axis: .vertical,
                                              spacing: 10)
     
+   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         checkUserResults()
         setupViews()
         setConstraints()
         setDelegates()
-       
+        
     }
     private func setupViews() {
+        
         self.navigationController?.isNavigationBarHidden = true
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gradientView)
@@ -76,13 +78,22 @@ class ResultVC: UIViewController {
 
 extension ResultVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       resultsArray.count
+        resultsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdPrize.idPrizeCell.rawValue, for: indexPath) as? PrizeCollectionViewCell
         else { return UICollectionViewCell() }
         
+
+        guard let settin = UserDefaults.standard.value(Settings.self, forKey: "settings") else { return UICollectionViewCell() }
+        let sortArray = (settin.recordsArray.sorted())
+        
+        cell.configureContentView()
+        cell.setupPrizeLabel(text: "\(sortArray[indexPath.row])")
+        
+        cell.setupNameLabel(text: "Name")
+        cell.setConstraint()
         cell.setupLabel(text: resultsArray.reversed()[indexPath.row])
         cell.setConstraints()
         
