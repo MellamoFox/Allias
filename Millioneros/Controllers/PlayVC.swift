@@ -19,7 +19,8 @@ class PlayVC: UIViewController {
     private var questionBrain = QuestionBrain()
     private let gradientView = GradientView()
     private let resultVC = ResultVC()
-    
+    private let helpButtonsBrain = HelpButtonsBrain()
+//    var mistakeBool = false
     
     private lazy var stackView = UIStackView(arrangedSubviews: [answerButtonsArray[0],answerButtonsArray[1]],
                                              axis: .vertical,
@@ -95,9 +96,24 @@ class PlayVC: UIViewController {
     @objc private func helpButtonTapped(_ sender: UIButton) {
         sender.isEnabled = false
         sender.alpha = 0.5
+        let currentTitle = sender.currentTitle!
+        let allAnswers = questionBrain.getQuestion().answers
+        let correntAnswer = questionBrain.getQuestion().rightAnswer
+     
+        
+        if currentTitle == "50/50" {
+            helpButtonsBrain.fiftyButtonPressed(answersButtonTitle: allAnswers, correctAnswer: correntAnswer, arrayAnswer: answerButtonsArray)
+        } else if currentTitle == "Call" {
+            let friendAnswer =  helpButtonsBrain.callFriendButtonPressed(answersButtonTitle: allAnswers, correctAnswer: correntAnswer, arrayAnswer: answerButtonsArray, levelAnswer: questionBrain.questionIndex)
+            let indexFriend = helpButtonsBrain.indexFriendAnswer(answersButtonTitle: allAnswers, answer: friendAnswer)
+            showAlertButtonTapped(answer: friendAnswer, index: indexFriend)
+        } else if currentTitle == "Mistake" {
+//            mistakeButtonPressed(onOff: true)
+           
+        }
     }
     
-    @objc private func answerButtonTapped(_ sender: UIButton) {
+    @objc func answerButtonTapped(_ sender: UIButton) {
         sender.backgroundColor = .yellow
         sender.setTitleColor(.black, for: .normal)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { [self] in
@@ -111,6 +127,7 @@ class PlayVC: UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                     self.navigationController?.pushViewController(self.resultVC, animated: true)
                     self.questionBrain.nextQuestion()
+                    self.updateUI(buttonAnswer: answerButtonsArray)
                 })
                 } else {
                 userResults = false
