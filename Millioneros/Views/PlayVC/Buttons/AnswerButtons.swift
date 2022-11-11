@@ -28,6 +28,7 @@ class AnswerButtons: UIButton {
             let button = UIButton()
             button.translatesAutoresizingMaskIntoConstraints = false
             button.alpha = 0.9
+            button.titleLabel!.adjustsFontSizeToFitWidth = true
             button.clipsToBounds = true
             answerButtonsArray.append(button)
             button.layer.cornerRadius = 10

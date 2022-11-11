@@ -33,6 +33,7 @@ class PlayVC: UIViewController {
                                               spacing: 20)
     
     override func viewDidLoad() {
+        self.navigationController?.isNavigationBarHidden = true
         super.viewDidLoad()
         setupViews()
         setupButtonsAction()
@@ -52,7 +53,6 @@ class PlayVC: UIViewController {
     }
     
     private func setupViews() {
-        self.navigationController?.isNavigationBarHidden = true
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gradientView)
         view.addSubview(stackView)

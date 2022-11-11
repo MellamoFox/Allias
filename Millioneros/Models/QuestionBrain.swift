@@ -8,7 +8,7 @@
 import Foundation
 
 struct QuestionBrain {
-    var questionIndex = 0
+    var questionIndex = 1
     var questionNumber = 1
     var usedQuestions = Set<Int>()
     let winArray = [0,100,200,300,500,1000,2000,4000,8000,32000,64000,125000,250000,500000,1000000]
@@ -19,42 +19,42 @@ struct QuestionBrain {
         Question(q: "О чём писал Грибоедов, отмечая, что он «нам сладок и приятен» ?", a: ["Дым Отечества", "Дух купечества", "Дар пророчества", "Пыл девичества"], correctAnswer: "Дым Отечества"),
         Question(q: "Какого персонажа нет в известной считалке «На золотом крыльце сидели» ?", a: ["Сапожника", "Кузнеца", "Короля", "Портного"], correctAnswer: "Кузнеца"),
         Question(q: "Какой специалист занимается изучением неопознанных летающих объектов?", a: ["Кинолог", "Уфолог", "Сексопатолог", "Психиатр"], correctAnswer: "Уфолог"),
-        Question(q: "How would one say goodbye in Spanish?", a: ["Au Revoir", "Adiós", "Salir", "test"], correctAnswer: "Adiós"),
-        Question(q: "Which of these colours is NOT featured in the logo for Google?", a: ["Green", "Orange", "Blue", "test"], correctAnswer: "Orange"),
-        Question(q: "What alcoholic drink is made from molasses?", a: ["Rum", "Whisky", "Gin", "test"], correctAnswer: "Rum"),
-        Question(q: "What type of animal was Harambe?", a: ["Panda", "Gorilla", "Crocodile", "test"], correctAnswer: "Gorilla"),
-        Question(q: "Where is Tasmania located?", a: ["Indonesia", "Australia", "Scotland", "test"], correctAnswer: "Australia")
+        Question(q: "Что украшает мачту пиратского судна?", a: ["Кровавая Мэри", "Грязный Гарри", "Бедный Йорик", "Весёлый Роджер"], correctAnswer: "Весёлый Роджер"),
+        Question(q: "Как называется одно из блюд?", a: ["Макароны-по-флотски", "Лапша-по-пилотски", "Вермишель-по-солдатски", "Спагетти-по-снайперски"], correctAnswer: "Макароны-по-флотски"),
+        Question(q: "Что является характеристикой коллекционного вина?", a: ["Стойкость", "Выдержка", "Выносливость", "Трезвость"], correctAnswer: "Выдержка"),
+        Question(q: "Что искал Колумб, а в результате открыл Америку?", a: ["Голливуд", "Диснейленд", "Путь в Индию", "Кафе с гамбургерами"], correctAnswer: "Путь в Индию"),
+        Question(q: "Как называется один из конкурсов «КВН»?", a: ["Тренировка", "Разминка", "Шейпинг", "Аэробика"], correctAnswer: "Разминка")
     ]
     
     let quizMedium = [
         Question(q: "Как называется разновидность воды, в которой атом водорода замещён его изотопом дейтерием?", a: ["Лёгкая", "Средняя", "Тяжёлая", "Невесомая"], correctAnswer: "Тяжёлая"),
-        Question(q: "Five dollars is worth how many nickels?", a: ["25", "50", "100", "test"], correctAnswer: "100"),
-        Question(q: "What do the letters in the GMT time zone stand for?", a: ["Global Meridian Time", "Greenwich Mean Time", "General Median Time", "test"], correctAnswer: "Greenwich Mean Time"),
-        Question(q: "What is the French word for 'hat'?", a: ["Chapeau", "Écharpe", "Bonnet", "test"], correctAnswer: "Chapeau"),
-        Question(q: "In past times, what would a gentleman keep in his fob pocket?", a: ["Notebook", "Handkerchief", "Watch", "test"], correctAnswer: "Watch"),
-        Question(q: "How would one say goodbye in Spanish?", a: ["Au Revoir", "Adiós", "Salir", "test"], correctAnswer: "Adiós"),
-        Question(q: "Which of these colours is NOT featured in the logo for Google?", a: ["Green", "Orange", "Blue", "test"], correctAnswer: "Orange"),
-        Question(q: "What alcoholic drink is made from molasses?", a: ["Rum", "Whisky", "Gin", "test"], correctAnswer: "Rum"),
-        Question(q: "What type of animal was Harambe?", a: ["Panda", "Gorilla", "Crocodile", "test"], correctAnswer: "Gorilla"),
-        Question(q: "Where is Tasmania located?", a: ["Indonesia", "Australia", "Scotland", "test"], correctAnswer: "Australia")
+        Question(q: "Какая страна ежегодно дарит Великобритании к Рождеству роскошную ёлку?", a: ["Финляндия", "Швеция", "Норвегия", "Дания"], correctAnswer: "Норвегия"),
+        Question(q: "Какая из перечисленных башен самая низкая?", a: ["Останкинская", "Эйфелева", "Пизанская", "Спасская"], correctAnswer: "Пизанская"),
+        Question(q: "Какой напиток получают из сахарного тростника?", a: ["Джин", "Ром", "Коньяк", "Вермут"], correctAnswer: "Ром"),
+        Question(q: "Какие пальцы музыканты не используют при игре на арфе", a: ["Большие", "Указательные", "Безымянные", "Мизинцы"], correctAnswer: "Мизинцы"),
+        Question(q: "Какое европейское государство является Великим Герцогством?", a: ["Андорра", "Люксембург", "Лихтенштейн", "Монако"], correctAnswer: "Люксембург"),
+        Question(q: "Какую птицу американцы традиционно готовят на День Благодарения?", a: ["Курицу", "Индейку", "Гуся", "Утку"], correctAnswer: "Индейку"),
+        Question(q: "На территории какой современной страны находился Карфаген?", a: ["Тунис", "Египет", "Судан", "Израиль"], correctAnswer: "Тунис"),
+        Question(q: "Каким голосом пел Фёдор Шаляпин?", a: ["Бас", "Тенор", "Баритон", "Фальцет"], correctAnswer: "Бас"),
+        Question(q: "Какого цвета нет на государственном флаге Армении?", a: ["Красного", "Синего", "Оранжевого", "Белого"], correctAnswer: "Белого")
     ]
     
     let quizHard = [
         Question(q: "Какой химический элемент назван в честь злого подземного гнома?", a: ["Гафний", "Кобальт", "Бериллий", "Теллур"], correctAnswer: "Кобальт"),
-        Question(q: "Five dollars is worth how many nickels?", a: ["25", "50", "100", "test"], correctAnswer: "100"),
-        Question(q: "What do the letters in the GMT time zone stand for?", a: ["Global Meridian Time", "Greenwich Mean Time", "General Median Time", "test"], correctAnswer: "Greenwich Mean Time"),
-        Question(q: "What is the French word for 'hat'?", a: ["Chapeau", "Écharpe", "Bonnet", "test"], correctAnswer: "Chapeau"),
-        Question(q: "In past times, what would a gentleman keep in his fob pocket?", a: ["Notebook", "Handkerchief", "Watch", "test"], correctAnswer: "Watch"),
-        Question(q: "How would one say goodbye in Spanish?", a: ["Au Revoir", "Adiós", "Salir", "test"], correctAnswer: "Adiós"),
-        Question(q: "Which of these colours is NOT featured in the logo for Google?", a: ["Green", "Orange", "Blue", "test"], correctAnswer: "Orange"),
-        Question(q: "What alcoholic drink is made from molasses?", a: ["Rum", "Whisky", "Gin", "test"], correctAnswer: "Rum"),
-        Question(q: "What type of animal was Harambe?", a: ["Panda", "Gorilla", "Crocodile", "test"], correctAnswer: "Gorilla"),
-        Question(q: "Where is Tasmania located?", a: ["Indonesia", "Australia", "Scotland", "test"], correctAnswer: "Australia")
+        Question(q: "Какой город США принято считать родиной джаза?", a: ["Чикаго", "Нью-Йорк", "Новый Орлеан", "Сан-Франциско"], correctAnswer: "Новый Орлеан"),
+        Question(q: "Премьера какой программы состоялась 1 января 1968 года?", a: ["Время", "Голубой огонёк", "Кинопанорама", "Очевидное-невероятное"], correctAnswer: "Время"),
+        Question(q: "Горсть чего бросают перед выходом на ковёр борцы сумо?", a: ["Риса", "Соли", "Сои", "Опилок бамбука"], correctAnswer: "Соли"),
+        Question(q: "Какой камень венчает Большую Российскую Императорскую корону?", a: ["Топаз", "Изумруд", "Шпинель", "Сапфир"], correctAnswer: "Шпинель"),
+        Question(q: "Сколько куполов у собора Василия Блаженного?", a: ["7", "10", "11", "13"], correctAnswer: "10"),
+        Question(q: "Кто первым применил таран в воздушном бою?", a: ["Арцеулов", "Кожедуб", "Нестеров", "Талалихин"], correctAnswer: "Нестеров"),
+        Question(q: "Кто из этих легендарных личностей не входит в число трёх братьев, основавших Киев?", a: ["Кий", "Рюрик", "Щек", "Хорив"], correctAnswer: "Рюрик"),
+        Question(q: "Какое Евангелие открывает Новый Завет?", a: ["От Луки", "От Марка", "От Иоанна", "От Матфея"], correctAnswer: "От Матфея"),
+        Question(q: "Для людей какой профессии делались первые шариковые ручки?", a: ["Журналисты", "Водолазы", "Лётчики", "Учителя"], correctAnswer: "Лётчики")
     ]
     
     func getQuestion() -> Question {
         switch questionNumber  {
-        case 1...5:
+        case 0...5:
             return quizEasy[questionIndex]
         case 6...10:
             return quizMedium[questionIndex]
