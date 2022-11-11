@@ -61,7 +61,7 @@ class WelcomeVC: UIViewController {
             self.navigationController?.pushViewController(playVC, animated: true)
 //MARK: - temp for testinc score VC as stackView
         case scoresButton.title(for: .normal)! :
-            let resultVC = ScoresVC()
+            let resultVC = ResultVC()
             print(startButton.title(for: .normal)!)
             navigationController?.pushViewController(resultVC, animated: true)
         default: print("unnormal choose")

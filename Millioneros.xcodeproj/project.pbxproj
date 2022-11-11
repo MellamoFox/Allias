@@ -12,6 +12,8 @@
 		3E8DC9F5291CC9AD0097C091 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8DC9F4291CC9AD0097C091 /* ContinueButton.swift */; };
 		3E90DA62291BEE6D00D0CB4D /* ScoresTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E90DA61291BEE6D00D0CB4D /* ScoresTableView.swift */; };
 		3EA29007291BF08E00B5159F /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA29006291BF08E00B5159F /* ScoreTableViewCell.swift */; };
+		3EE10829291EADFB000C7921 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE10828291EADFB000C7921 /* ResultVC.swift */; };
+		3EE1082B291EB16C000C7921 /* HappyAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1082A291EB16C000C7921 /* HappyAlert.swift */; };
 		7732B553291E3D6B002A4873 /* HelpButtonsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732B552291E3D6B002A4873 /* HelpButtonsBrain.swift */; };
 		7732B555291E46AE002A4873 /* ScoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732B554291E46AD002A4873 /* ScoresVC.swift */; };
 		775EB901291BCF1D00D5FAC0 /* FadeInAdnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */; };
@@ -49,6 +51,8 @@
 		3E8DC9F4291CC9AD0097C091 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
 		3E90DA61291BEE6D00D0CB4D /* ScoresTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresTableView.swift; sourceTree = "<group>"; };
 		3EA29006291BF08E00B5159F /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
+		3EE10828291EADFB000C7921 /* ResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultVC.swift; path = ../../../LinksMillion/Millioneros/Controllers/ResultVC.swift; sourceTree = "<group>"; };
+		3EE1082A291EB16C000C7921 /* HappyAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HappyAlert.swift; path = ../../../../../Downloads/HappyAlert.swift; sourceTree = "<group>"; };
 		7732B552291E3D6B002A4873 /* HelpButtonsBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpButtonsBrain.swift; sourceTree = "<group>"; };
 		7732B554291E46AD002A4873 /* ScoresVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresVC.swift; sourceTree = "<group>"; };
 		775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInAdnimation.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				77C57E28291946350041746B /* QuestionBrain.swift */,
 				77C57E2A291946780041746B /* Question.swift */,
 				3E8596B4291CE53B00127CB3 /* Settings.swift */,
+				3EE1082A291EB16C000C7921 /* HappyAlert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 			children = (
 				7732B554291E46AD002A4873 /* ScoresVC.swift */,
 				77DEB73029169A3400CE8986 /* WelcomeVC.swift */,
+				3EE10828291EADFB000C7921 /* ResultVC.swift */,
 				77C57E02291797C90041746B /* RulesVC.swift */,
 				77C57E0C2917AADB0041746B /* PlayVC.swift */,
 			);
@@ -400,11 +406,13 @@
 				77C57E062917984D0041746B /* RulesTextLabel.swift in Sources */,
 				7732B555291E46AE002A4873 /* ScoresVC.swift in Sources */,
 				77C57E57291A6F610041746B /* TimerSetUp.swift in Sources */,
+				3EE10829291EADFB000C7921 /* ResultVC.swift in Sources */,
 				77C57E082917995E0041746B /* AgreeButton.swift in Sources */,
 				77C57E0F2917C7B70041746B /* GradientView.swift in Sources */,
 				77C57E2F29194BCB0041746B /* StatusLabel.swift in Sources */,
 				77C57E29291946350041746B /* QuestionBrain.swift in Sources */,
 				77C57E21291909130041746B /* PrizeCollectionViewCell.swift in Sources */,
+				3EE1082B291EB16C000C7921 /* HappyAlert.swift in Sources */,
 				77C57DF32916A7430041746B /* NameTextField.swift in Sources */,
 				3E8596B5291CE53B00127CB3 /* Settings.swift in Sources */,
 				3E8596B7291CE57200127CB3 /* UserDefaults + extension.swift in Sources */,
