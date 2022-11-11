@@ -7,10 +7,10 @@
 
 import UIKit
 
-var userResults = true
 
 class PlayVC: UIViewController {
     
+    var userResults = true
     var yourWin = 0
     private let setTimer = TimerSetUp()
     private let helpButtons = HelpButtons()
@@ -20,17 +20,17 @@ class PlayVC: UIViewController {
     private let gradientView = GradientView()
     private let resultVC = ScoresVC()
     private let helpButtonsBrain = HelpButtonsBrain()
-//    var mistakeBool = false
+    //    var mistakeBool = false
     
     private lazy var stackView = UIStackView(arrangedSubviews: [answerButtonsArray[0],answerButtonsArray[1]],
                                              axis: .vertical,
                                              spacing: 20)
     private lazy var stackView2 = UIStackView(arrangedSubviews: [answerButtonsArray[2],answerButtonsArray[3]],
-                                             axis: .vertical,
-                                             spacing: 20)
+                                              axis: .vertical,
+                                              spacing: 20)
     private lazy var stackView3 = UIStackView(arrangedSubviews: helpButtonsArray,
-                                             axis: .horizontal,
-                                             spacing: 20)
+                                              axis: .horizontal,
+                                              spacing: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,7 @@ class PlayVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        setupViews()
         setAnswerTitles()
         questionLabel.text = ""
         questionLabel.animation(typing: questionBrain.getQuestion().text, duration: 0.05)
@@ -74,13 +75,13 @@ class PlayVC: UIViewController {
     
     private func setAnswerTitles() {
         for i in 0..<4 {
-                let answer = questionBrain.getQuestion().answers
-                answerButtonsArray[i].setTitle("\(answer[i])", for: .normal)
-                answerButtonsArray[i].backgroundColor = .none
-                answerButtonsArray[i].setTitleColor(.white, for: .normal)
+            let answer = questionBrain.getQuestion().answers
+            answerButtonsArray[i].setTitle("\(answer[i])", for: .normal)
+            answerButtonsArray[i].backgroundColor = .none
+            answerButtonsArray[i].setTitleColor(.white, for: .normal)
         }
     }
-   
+    
     
     private func setStackViews() {
         stackView.alignment = .fill
@@ -99,7 +100,7 @@ class PlayVC: UIViewController {
         let currentTitle = sender.currentTitle!
         let allAnswers = questionBrain.getQuestion().answers
         let correntAnswer = questionBrain.getQuestion().rightAnswer
-     
+        
         
         if currentTitle == "50/50" {
             helpButtonsBrain.fiftyButtonPressed(answersButtonTitle: allAnswers, correctAnswer: correntAnswer, arrayAnswer: answerButtonsArray)
@@ -108,8 +109,8 @@ class PlayVC: UIViewController {
             let indexFriend = helpButtonsBrain.indexFriendAnswer(answersButtonTitle: allAnswers, answer: friendAnswer)
             showAlertButtonTapped(answer: friendAnswer, index: indexFriend)
         } else if currentTitle == "Mistake" {
-//            mistakeButtonPressed(onOff: true)
-           
+            //            mistakeButtonPressed(onOff: true)
+            
         }
     }
     
@@ -120,17 +121,16 @@ class PlayVC: UIViewController {
             let userAnswer = sender.currentTitle
             let userGotItRight = self.questionBrain.checkAnswer(userAnswer: userAnswer!)
             if userGotItRight {
+                userResults = true
                 yourWin = questionBrain.winArray[questionBrain.questionNumber]
-                print(yourWin)
                 sender.backgroundColor = .green
-                yourWin = questionBrain.winArray[questionBrain.questionNumber]
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
-                    self.resultVC.yourWin = self.yourWin
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: { [self] in
+                    resultVC.userResults = self.userResults
+                    resultVC.yourWin = self.yourWin
                     self.navigationController?.pushViewController(self.resultVC, animated: true)
                     self.questionBrain.nextQuestion()
-                    self.updateUI(buttonAnswer: answerButtonsArray)
                 })
-                } else {
+            } else {
                 userResults = false
                 sender.backgroundColor = .red
                 switch yourWin {
@@ -138,9 +138,10 @@ class PlayVC: UIViewController {
                 case 1000..<32000 : yourWin = questionBrain.winArray[5]
                 default : yourWin = 0
                 }
-                print(yourWin)
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: { [self] in
-                    navigationController?.pushViewController(resultVC, animated: true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: { [self] in
+                    resultVC.userResults = self.userResults
+                    resultVC.yourWin = self.yourWin
+                    self.navigationController?.pushViewController(self.resultVC, animated: true)
                 })
             }
         })
@@ -183,7 +184,7 @@ class PlayVC: UIViewController {
             stackView3.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
             stackView3.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             stackView3.heightAnchor.constraint(equalToConstant: 50),
-
+            
         ])
     }
 }

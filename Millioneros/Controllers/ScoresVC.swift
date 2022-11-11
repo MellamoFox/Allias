@@ -8,13 +8,14 @@ class ScoresVC: UIViewController {
     
     // MARK: - Constans and Variabels
     
+    var userResults = Bool()
+    var yourWin = 0
     private var scoreTableView = UITableView()
     private var backButton = UIButton()
     private let gradientView = GradientView()
     
     weak var delegate: ScoresVCDelegate?
     
-    var yourWin = 2000
     let scoreStringArray = ["0","100","200","300","500","1000","2000","4000","8000","32 000","64 000","125 000","250 000","500 000","1 000 000"]
     let scoreIntArray = [0, 100, 200, 300, 500, 1000, 2000, 4000, 8000, 32000, 64000, 125000, 250000, 500000, 1000000]
     
@@ -30,6 +31,8 @@ class ScoresVC: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        checkUserResults()
+        backButton.addTarget(self, action: #selector(userDecide), for: .touchUpInside)
         scoreTableView.reloadData()
     }
     //MARK: - Methods
@@ -42,8 +45,6 @@ class ScoresVC: UIViewController {
         backButton.setTitleColor(.white, for: .normal)
         backButton.titleLabel?.font = UIFont(name: "System", size: 20)
         backButton.layer.cornerRadius = 20
-        backButton.setTitle("Play again", for: .normal)
-        backButton.addTarget(self, action: #selector(backbuttonTapped), for: .touchUpInside)
         
         view.addSubview(backButton)
         
@@ -55,6 +56,26 @@ class ScoresVC: UIViewController {
             backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/20),
             backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0)
         ])
+    }
+    
+    func checkUserResults() {
+        switch userResults {
+        case false : backButton.setTitle("Попробовать еще", for: .normal)
+            print(userResults)
+            print(yourWin)
+        case true : backButton.setTitle("Продолжить", for: .normal)
+            print(userResults)
+            print(yourWin)
+        }
+    }
+    @objc private func userDecide(_ sender: UIButton) {
+        switch userResults {
+        case true:
+            _ = navigationController?.popViewController(animated: true)
+        default :
+            print("GameOver")
+
+        }
     }
     
     private func setupViews() {
@@ -82,15 +103,9 @@ class ScoresVC: UIViewController {
             scoreTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             scoreTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             scoreTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/1.20)
-            
-            
+    
         ])
         
-    }
-    
-    @objc private func backbuttonTapped() {
-        print("sad")
-        _ = navigationController?.popViewController(animated: true)
     }
     
     
