@@ -44,15 +44,16 @@ class ScoresVC: UIViewController {
         backButton.backgroundColor = .brown
         backButton.setTitleColor(.white, for: .normal)
         backButton.titleLabel?.font = UIFont(name: "System", size: 20)
-        backButton.layer.cornerRadius = 20
+        backButton.layer.cornerRadius = 10
         
         view.addSubview(backButton)
         
         backButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             
-            backButton.topAnchor.constraint(equalTo: scoreTableView.bottomAnchor, constant: 20),
-            backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
+            backButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            backButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            backButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/20),
             backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0)
         ])
@@ -100,9 +101,9 @@ class ScoresVC: UIViewController {
             
             
             scoreTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            scoreTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            scoreTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            scoreTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/1.20)
+            scoreTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            scoreTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            scoreTableView.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -20)
     
         ])
         
