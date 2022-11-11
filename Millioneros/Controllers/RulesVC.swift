@@ -35,7 +35,7 @@ class RulesVC: UIViewController {
             rulesText.bottomAnchor.constraint(equalTo: agreeButton.topAnchor)
         ])
     }
-    
+    //mark new
     private func setupViews() {
         self.navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .white

@@ -1,10 +1,12 @@
-import Foundation
-import UIKit
 
-class GoOneButton: UIButton {
-    override init(frame:CGRect) {
-        super.init(frame:frame)
-        configure()
+
+import UIKit
+import Foundation
+
+class ContinueButton: UIButton {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     required init?(coder: NSCoder) {
@@ -12,13 +14,13 @@ class GoOneButton: UIButton {
     }
     
     private func configure() {
-        backgroundColor = .yellow
+        
+        alpha = 0.8
+        backgroundColor = .green
+        layer.cornerRadius = 20
         setTitle("Продолжить", for: .normal)
         setTitleColor(.green, for: .normal)
-        layer.cornerRadius = 10
         titleLabel?.font = UIFont(name: "Avenir Bool", size: 17)
-        alpha = 1
         translatesAutoresizingMaskIntoConstraints = false
-        
     }
 }
