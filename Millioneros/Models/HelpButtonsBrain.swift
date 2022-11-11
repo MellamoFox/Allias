@@ -105,3 +105,18 @@ extension PlayVC {
         
     }
 }
+
+
+extension PlayVC {
+    
+    func moneyButtonPressed(change: Bool) -> Bool {
+        
+        if change {
+            return true
+        } else {
+            return false
+        }
+
+        
+    }
+}
