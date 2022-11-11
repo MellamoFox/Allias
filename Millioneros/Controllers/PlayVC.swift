@@ -21,6 +21,7 @@ class PlayVC: UIViewController {
     private let resultVC = ScoresVC()
     private let helpButtonsBrain = HelpButtonsBrain()
     var mistakeBool = false
+    var takeMoney = true
     
     private lazy var stackView = UIStackView(arrangedSubviews: [answerButtonsArray[0],answerButtonsArray[1]],
                                              axis: .vertical,
@@ -112,6 +113,8 @@ class PlayVC: UIViewController {
         } else if currentTitle == "Mistake" {
             mistakeBool = true
             
+        } else if currentTitle == "Money" {
+            takeMoney = false
         }
     }
     
@@ -122,10 +125,12 @@ class PlayVC: UIViewController {
             let userAnswer = sender.currentTitle
             let userGotItRight = self.questionBrain.checkAnswer(userAnswer: userAnswer!)
             if userGotItRight {
-                userResults = true
+                userResults = moneyButtonPressed(change: takeMoney)
+//                userResults = true
                 yourWin = questionBrain.winArray[questionBrain.questionNumber]
                 sender.backgroundColor = .green
                 mistakeBool = false
+                showHappyAlert(score: self.yourWin)
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: { [self] in
                     resultVC.userResults = self.userResults
                     resultVC.yourWin = self.yourWin
@@ -136,7 +141,6 @@ class PlayVC: UIViewController {
                 })
             } else {
                 userResults = mistakeButtonPressed(change: mistakeBool)
-                print("2) mistake = \(mistakeBool), userResult = \(userResults)")
                 sender.backgroundColor = .red
                 switch yourWin {
                 case 32000..<1000000 : yourWin = questionBrain.winArray[9]
