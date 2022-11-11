@@ -54,7 +54,6 @@ class WelcomeVC: UIViewController {
         switch userChoice {
         case rulesButton.title(for: .normal)! :
             let rulesVC = RulesVC()
-            userResults = true
             navigationController?.pushViewController(rulesVC, animated: true)
         case startButton.title(for: .normal)! :
             let playVC = PlayVC()

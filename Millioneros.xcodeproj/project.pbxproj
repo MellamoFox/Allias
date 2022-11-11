@@ -27,7 +27,6 @@
 		77C57E082917995E0041746B /* AgreeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E072917995E0041746B /* AgreeButton.swift */; };
 		77C57E0D2917AADB0041746B /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E0C2917AADB0041746B /* PlayVC.swift */; };
 		77C57E0F2917C7B70041746B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E0E2917C7B70041746B /* GradientView.swift */; };
-		77C57E162918EEDD0041746B /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E152918EEDD0041746B /* ResultVC.swift */; };
 		77C57E1A2918F10C0041746B /* GoOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E192918F10C0041746B /* GoOneButton.swift */; };
 		77C57E1C2918FD2F0041746B /* ResultsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E1B2918FD2F0041746B /* ResultsCollectionView.swift */; };
 		77C57E21291909130041746B /* PrizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E20291909130041746B /* PrizeCollectionViewCell.swift */; };
@@ -65,7 +64,6 @@
 		77C57E072917995E0041746B /* AgreeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeButton.swift; sourceTree = "<group>"; };
 		77C57E0C2917AADB0041746B /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
 		77C57E0E2917C7B70041746B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		77C57E152918EEDD0041746B /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		77C57E192918F10C0041746B /* GoOneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoOneButton.swift; sourceTree = "<group>"; };
 		77C57E1B2918FD2F0041746B /* ResultsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCollectionView.swift; sourceTree = "<group>"; };
 		77C57E20291909130041746B /* PrizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 				77DEB73029169A3400CE8986 /* WelcomeVC.swift */,
 				77C57E02291797C90041746B /* RulesVC.swift */,
 				77C57E0C2917AADB0041746B /* PlayVC.swift */,
-				77C57E152918EEDD0041746B /* ResultVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -387,7 +384,6 @@
 				77C57E1C2918FD2F0041746B /* ResultsCollectionView.swift in Sources */,
 				77C57DFF2916AF370041746B /* ScoresButton.swift in Sources */,
 				3EA29007291BF08E00B5159F /* ScoreTableViewCell.swift in Sources */,
-				77C57E162918EEDD0041746B /* ResultVC.swift in Sources */,
 				7732B553291E3D6B002A4873 /* HelpButtonsBrain.swift in Sources */,
 				775EB903291BFF5F00D5FAC0 /* AnswerButtons.swift in Sources */,
 				77C57DF52916A9060041746B /* StartButton.swift in Sources */,
