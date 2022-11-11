@@ -93,9 +93,9 @@ extension ResultVC: UICollectionViewDataSource {
         cell.setupPrizeLabel(text: "\(sortArray[indexPath.row])")
         
         cell.setupNameLabel(text: "Name")
-        cell.setConstraint()
-        cell.setupLabel(text: resultsArray.reversed()[indexPath.row])
-        cell.setConstraints()
+       // cell.setConstraint()
+      //cell.setupLabel(text: resultsArray.reversed()[indexPath.row])
+       // cell.setConstraints()
         
         return cell
     }

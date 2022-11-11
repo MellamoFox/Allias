@@ -7,18 +7,18 @@
 
 import UIKit
 
-var yourWin = 0
 var userResults = true
 
 class PlayVC: UIViewController {
     
+    var yourWin = 0
     private let setTimer = TimerSetUp()
     private let helpButtons = HelpButtons()
     private let answerButtons = AnswerButtons()
     private let questionLabel = QuestionLabel()
     private var questionBrain = QuestionBrain()
     private let gradientView = GradientView()
-    private let resultVC = ResultVC()
+    private let resultVC = ScoresVC()
     private let helpButtonsBrain = HelpButtonsBrain()
 //    var mistakeBool = false
     
@@ -125,6 +125,7 @@ class PlayVC: UIViewController {
                 sender.backgroundColor = .green
                 yourWin = questionBrain.winArray[questionBrain.questionNumber]
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+                    self.resultVC.yourWin = self.yourWin
                     self.navigationController?.pushViewController(self.resultVC, animated: true)
                     self.questionBrain.nextQuestion()
                     self.updateUI(buttonAnswer: answerButtonsArray)
