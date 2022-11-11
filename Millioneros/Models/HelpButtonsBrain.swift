@@ -94,8 +94,13 @@ extension PlayVC {
 // for badAnswer
 extension PlayVC {
     
-    func mistakeButtonPressed()  {
+    func mistakeButtonPressed(change: Bool) -> Bool {
         
+        if change {
+            return true
+        } else {
+            return false
+        }
 
         
     }

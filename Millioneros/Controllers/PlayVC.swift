@@ -20,7 +20,7 @@ class PlayVC: UIViewController {
     private let gradientView = GradientView()
     private let resultVC = ScoresVC()
     private let helpButtonsBrain = HelpButtonsBrain()
-    //    var mistakeBool = false
+    var mistakeBool = false
     
     private lazy var stackView = UIStackView(arrangedSubviews: [answerButtonsArray[0],answerButtonsArray[1]],
                                              axis: .vertical,
@@ -50,6 +50,7 @@ class PlayVC: UIViewController {
         questionLabel.animation(typing: questionBrain.getQuestion().text, duration: 0.05)
         view.addSubview(setTimer)
         setTimerConstraints()
+        
     }
     
     private func setupViews() {
@@ -109,7 +110,7 @@ class PlayVC: UIViewController {
             let indexFriend = helpButtonsBrain.indexFriendAnswer(answersButtonTitle: allAnswers, answer: friendAnswer)
             showAlertButtonTapped(answer: friendAnswer, index: indexFriend)
         } else if currentTitle == "Mistake" {
-            //            mistakeButtonPressed(onOff: true)
+            mistakeBool = true
             
         }
     }
@@ -124,14 +125,18 @@ class PlayVC: UIViewController {
                 userResults = true
                 yourWin = questionBrain.winArray[questionBrain.questionNumber]
                 sender.backgroundColor = .green
+                mistakeBool = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: { [self] in
                     resultVC.userResults = self.userResults
                     resultVC.yourWin = self.yourWin
+                    
                     self.navigationController?.pushViewController(self.resultVC, animated: true)
                     self.questionBrain.nextQuestion()
+                    self.updateUI(buttonAnswer: answerButtonsArray)
                 })
             } else {
-                userResults = false
+                userResults = mistakeButtonPressed(change: mistakeBool)
+                print("2) mistake = \(mistakeBool), userResult = \(userResults)")
                 sender.backgroundColor = .red
                 switch yourWin {
                 case 32000..<1000000 : yourWin = questionBrain.winArray[9]
@@ -143,6 +148,7 @@ class PlayVC: UIViewController {
                     resultVC.yourWin = self.yourWin
                     self.navigationController?.pushViewController(self.resultVC, animated: true)
                 })
+                mistakeBool = false
             }
         })
     }
