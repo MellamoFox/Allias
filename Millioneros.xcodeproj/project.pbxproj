@@ -14,6 +14,7 @@
 		3EA29007291BF08E00B5159F /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA29006291BF08E00B5159F /* ScoreTableViewCell.swift */; };
 		7732B553291E3D6B002A4873 /* HelpButtonsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732B552291E3D6B002A4873 /* HelpButtonsBrain.swift */; };
 		7732B555291E46AE002A4873 /* ScoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732B554291E46AD002A4873 /* ScoresVC.swift */; };
+		77573B47291FC50E00F869AC /* HappyAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77573B46291FC50E00F869AC /* HappyAlert.swift */; };
 		775EB901291BCF1D00D5FAC0 /* FadeInAdnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */; };
 		775EB903291BFF5F00D5FAC0 /* AnswerButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775EB902291BFF5F00D5FAC0 /* AnswerButtons.swift */; };
 		77C57DF12916A6060041746B /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF02916A6060041746B /* UIStackView + Extensions.swift */; };
@@ -51,6 +52,7 @@
 		3EA29006291BF08E00B5159F /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		7732B552291E3D6B002A4873 /* HelpButtonsBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpButtonsBrain.swift; sourceTree = "<group>"; };
 		7732B554291E46AD002A4873 /* ScoresVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresVC.swift; sourceTree = "<group>"; };
+		77573B46291FC50E00F869AC /* HappyAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappyAlert.swift; sourceTree = "<group>"; };
 		775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInAdnimation.swift; sourceTree = "<group>"; };
 		775EB902291BFF5F00D5FAC0 /* AnswerButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButtons.swift; sourceTree = "<group>"; };
 		77C57DF02916A6060041746B /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		77DEB74129169DB900CE8986 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				77573B46291FC50E00F869AC /* HappyAlert.swift */,
 				7732B552291E3D6B002A4873 /* HelpButtonsBrain.swift */,
 				77C57E28291946350041746B /* QuestionBrain.swift */,
 				77C57E2A291946780041746B /* Question.swift */,
@@ -409,6 +412,7 @@
 				3E8596B5291CE53B00127CB3 /* Settings.swift in Sources */,
 				3E8596B7291CE57200127CB3 /* UserDefaults + extension.swift in Sources */,
 				77C57DFD2916AEF20041746B /* RulesButton.swift in Sources */,
+				77573B47291FC50E00F869AC /* HappyAlert.swift in Sources */,
 				77C57E1A2918F10C0041746B /* GoOneButton.swift in Sources */,
 				77C57DF12916A6060041746B /* UIStackView + Extensions.swift in Sources */,
 				77C57E33291A43C90041746B /* HelpButtons.swift in Sources */,
