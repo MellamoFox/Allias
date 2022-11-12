@@ -8,7 +8,7 @@
 import Foundation
 
 struct QuestionBrain {
-    var questionIndex = 1
+    var questionIndex = 0
     var questionNumber = 1
     var usedQuestions = Set<Int>()
     let winArray = [0,100,200,300,500,1000,2000,4000,8000,32000,64000,125000,250000,500000,1000000]
