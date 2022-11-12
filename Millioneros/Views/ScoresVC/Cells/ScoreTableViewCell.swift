@@ -46,7 +46,7 @@ class ScoreTableViewCell: UITableViewCell {
         scoreLabel.text = text
         containerView.backgroundColor = color
     }
-    
+        
     func createConstraint () {
          
         NSLayoutConstraint.activate([

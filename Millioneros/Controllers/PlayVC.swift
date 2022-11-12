@@ -96,7 +96,7 @@ class PlayVC: UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: { [] in
                     print("Should be faster")
                 })
-            default : Timer.invalidate()
+            default : timer.invalidate()
             }
         }
     }
@@ -182,6 +182,7 @@ class PlayVC: UIViewController {
         for i in 0..<4 {
             answerButtonsArray[i].isEnabled = false
         }
+        timer.invalidate()
         sender.isEnabled = true
         sender.isEnabled = false
         sender.backgroundColor = .yellow
