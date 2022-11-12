@@ -2,10 +2,10 @@ import Foundation
 
 class Settings: Codable {
     
-    var name: String
-    var recordsArray: [Int]
+    var name: String?
+    var recordsArray: [Int]?
     
-    init(name: String, recordsArray: [Int]) {
+    init(name: String?, recordsArray: [Int]?) {
         self.name = name
         self.recordsArray = recordsArray
     }

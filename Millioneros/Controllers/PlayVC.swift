@@ -126,7 +126,7 @@ class PlayVC: UIViewController {
             let userGotItRight = self.questionBrain.checkAnswer(userAnswer: userAnswer!)
             if userGotItRight {
                 userResults = moneyButtonPressed(change: takeMoney)
-//                userResults = true
+                userResults = true
                 yourWin = questionBrain.winArray[questionBrain.questionNumber]
                 sender.backgroundColor = .green
                 mistakeBool = false

@@ -9,6 +9,18 @@ import Foundation
 import UIKit
 
 class ScoresButton: UIButton {
+    
+    
+    public var isValid = false {
+        didSet {
+            if self.isValid {
+                setIsValid()
+            } else {
+                setNotValid()
+            }
+        }
+    }
+
     override init(frame:CGRect) {
         super.init(frame:frame)
         
@@ -28,4 +40,13 @@ class ScoresButton: UIButton {
         alpha = 0.9
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    func setNotValid() {
+       isEnabled = false
+       alpha = 0.8
+   }
+    func setIsValid() {
+       isEnabled = true
+       alpha = 1
+   }
 }

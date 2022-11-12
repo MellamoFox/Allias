@@ -16,9 +16,6 @@
 // Slavomir commit 7 21:54
 
 
-
-
-
 import UIKit
 
 @main

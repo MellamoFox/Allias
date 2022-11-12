@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-class ContinueButton: UIButton {
+class BackWelcomVCButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -16,9 +16,8 @@ class ContinueButton: UIButton {
         
         backgroundColor = .brown
         layer.cornerRadius = 10
-        setTitle("Продолжить", for: .normal)
+        setTitle("Главное меню", for: .normal)
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont(name: "System", size: 20)
-        
     }
 }
