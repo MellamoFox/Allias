@@ -18,6 +18,7 @@ class WelcomeVC: UIViewController {
         return imageView
     }()
     
+    private let startScreenSound = "startScreenSound"
     private let validityType: String.ValidityType = .name
     private let statusLabel = StatusLabel()
     private let nameTextField = NameTextField()
@@ -34,6 +35,7 @@ class WelcomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        playSound(resource: startScreenSound)
         setupViews()
         setConstraints()
 
@@ -56,6 +58,7 @@ class WelcomeVC: UIViewController {
             let rulesVC = RulesVC()
             navigationController?.pushViewController(rulesVC, animated: true)
         case startButton.title(for: .normal)! :
+            player.stop()
             let playVC = PlayVC()
             print(startButton.title(for: .normal)!)
             self.navigationController?.pushViewController(playVC, animated: true)

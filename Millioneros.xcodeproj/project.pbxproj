@@ -15,6 +15,16 @@
 		7732B553291E3D6B002A4873 /* HelpButtonsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732B552291E3D6B002A4873 /* HelpButtonsBrain.swift */; };
 		7732B555291E46AE002A4873 /* ScoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732B554291E46AD002A4873 /* ScoresVC.swift */; };
 		77573B47291FC50E00F869AC /* HappyAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77573B46291FC50E00F869AC /* HappyAlert.swift */; };
+		77573B49291FCAFB00F869AC /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77573B48291FCAFB00F869AC /* SoundModel.swift */; };
+		77573B4F291FCB9A00F869AC /* startScreenSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77573B4A291FCB9A00F869AC /* startScreenSound.mp3 */; };
+		77573B50291FCB9A00F869AC /* hallHelp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77573B4B291FCB9A00F869AC /* hallHelp.mp3 */; };
+		77573B51291FCB9A00F869AC /* answerAccepted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77573B4C291FCB9A00F869AC /* answerAccepted.mp3 */; };
+		77573B52291FCB9A00F869AC /* wrongAnswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77573B4D291FCB9A00F869AC /* wrongAnswer.mp3 */; };
+		77573B53291FCB9A00F869AC /* winGame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77573B4E291FCB9A00F869AC /* winGame.mp3 */; };
+		77573B57291FD0BB00F869AC /* startSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77573B54291FD0BB00F869AC /* startSound.mp3 */; };
+		77573B58291FD0BB00F869AC /* hardQuestionSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77573B55291FD0BB00F869AC /* hardQuestionSound.mp3 */; };
+		77573B59291FD0BB00F869AC /* rightAnswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77573B56291FD0BB00F869AC /* rightAnswer.mp3 */; };
+		77573B5B291FE52800F869AC /* TimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77573B5A291FE52800F869AC /* TimerLabel.swift */; };
 		775EB901291BCF1D00D5FAC0 /* FadeInAdnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */; };
 		775EB903291BFF5F00D5FAC0 /* AnswerButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775EB902291BFF5F00D5FAC0 /* AnswerButtons.swift */; };
 		77C57DF12916A6060041746B /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57DF02916A6060041746B /* UIStackView + Extensions.swift */; };
@@ -37,7 +47,6 @@
 		77C57E2F29194BCB0041746B /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E2E29194BCB0041746B /* StatusLabel.swift */; };
 		77C57E31291957480041746B /* QuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E30291957480041746B /* QuestionLabel.swift */; };
 		77C57E33291A43C90041746B /* HelpButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E32291A43C90041746B /* HelpButtons.swift */; };
-		77C57E57291A6F610041746B /* TimerSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C57E56291A6F610041746B /* TimerSetUp.swift */; };
 		77DEB72D29169A3400CE8986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DEB72C29169A3400CE8986 /* AppDelegate.swift */; };
 		77DEB73129169A3400CE8986 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DEB73029169A3400CE8986 /* WelcomeVC.swift */; };
 		77DEB73629169A3600CE8986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77DEB73529169A3600CE8986 /* Assets.xcassets */; };
@@ -53,6 +62,16 @@
 		7732B552291E3D6B002A4873 /* HelpButtonsBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpButtonsBrain.swift; sourceTree = "<group>"; };
 		7732B554291E46AD002A4873 /* ScoresVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresVC.swift; sourceTree = "<group>"; };
 		77573B46291FC50E00F869AC /* HappyAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappyAlert.swift; sourceTree = "<group>"; };
+		77573B48291FCAFB00F869AC /* SoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
+		77573B4A291FCB9A00F869AC /* startScreenSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startScreenSound.mp3; sourceTree = "<group>"; };
+		77573B4B291FCB9A00F869AC /* hallHelp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hallHelp.mp3; sourceTree = "<group>"; };
+		77573B4C291FCB9A00F869AC /* answerAccepted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = answerAccepted.mp3; sourceTree = "<group>"; };
+		77573B4D291FCB9A00F869AC /* wrongAnswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrongAnswer.mp3; sourceTree = "<group>"; };
+		77573B4E291FCB9A00F869AC /* winGame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winGame.mp3; sourceTree = "<group>"; };
+		77573B54291FD0BB00F869AC /* startSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startSound.mp3; sourceTree = "<group>"; };
+		77573B55291FD0BB00F869AC /* hardQuestionSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hardQuestionSound.mp3; sourceTree = "<group>"; };
+		77573B56291FD0BB00F869AC /* rightAnswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rightAnswer.mp3; sourceTree = "<group>"; };
+		77573B5A291FE52800F869AC /* TimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLabel.swift; sourceTree = "<group>"; };
 		775EB900291BCF1D00D5FAC0 /* FadeInAdnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInAdnimation.swift; sourceTree = "<group>"; };
 		775EB902291BFF5F00D5FAC0 /* AnswerButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButtons.swift; sourceTree = "<group>"; };
 		77C57DF02916A6060041746B /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
@@ -75,7 +94,6 @@
 		77C57E2E29194BCB0041746B /* StatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusLabel.swift; sourceTree = "<group>"; };
 		77C57E30291957480041746B /* QuestionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLabel.swift; sourceTree = "<group>"; };
 		77C57E32291A43C90041746B /* HelpButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButtons.swift; sourceTree = "<group>"; };
-		77C57E56291A6F610041746B /* TimerSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetUp.swift; sourceTree = "<group>"; };
 		77DEB72929169A3400CE8986 /* Millioneros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Millioneros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DEB72C29169A3400CE8986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77DEB73029169A3400CE8986 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
@@ -124,6 +142,14 @@
 		77C57DEB2916A1D70041746B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				77573B55291FD0BB00F869AC /* hardQuestionSound.mp3 */,
+				77573B56291FD0BB00F869AC /* rightAnswer.mp3 */,
+				77573B54291FD0BB00F869AC /* startSound.mp3 */,
+				77573B4C291FCB9A00F869AC /* answerAccepted.mp3 */,
+				77573B4B291FCB9A00F869AC /* hallHelp.mp3 */,
+				77573B4A291FCB9A00F869AC /* startScreenSound.mp3 */,
+				77573B4E291FCB9A00F869AC /* winGame.mp3 */,
+				77573B4D291FCB9A00F869AC /* wrongAnswer.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -191,7 +217,7 @@
 			children = (
 				77C57E0B2917A9290041746B /* Buttons */,
 				77C57E30291957480041746B /* QuestionLabel.swift */,
-				77C57E56291A6F610041746B /* TimerSetUp.swift */,
+				77573B5A291FE52800F869AC /* TimerLabel.swift */,
 			);
 			path = PlayVC;
 			sourceTree = "<group>";
@@ -276,6 +302,7 @@
 				77C57E28291946350041746B /* QuestionBrain.swift */,
 				77C57E2A291946780041746B /* Question.swift */,
 				3E8596B4291CE53B00127CB3 /* Settings.swift */,
+				77573B48291FCAFB00F869AC /* SoundModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,8 +399,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77573B58291FD0BB00F869AC /* hardQuestionSound.mp3 in Resources */,
+				77573B51291FCB9A00F869AC /* answerAccepted.mp3 in Resources */,
+				77573B50291FCB9A00F869AC /* hallHelp.mp3 in Resources */,
+				77573B59291FD0BB00F869AC /* rightAnswer.mp3 in Resources */,
+				77573B4F291FCB9A00F869AC /* startScreenSound.mp3 in Resources */,
+				77573B57291FD0BB00F869AC /* startSound.mp3 in Resources */,
 				77DEB73929169A3600CE8986 /* LaunchScreen.storyboard in Resources */,
+				77573B52291FCB9A00F869AC /* wrongAnswer.mp3 in Resources */,
 				77DEB73629169A3600CE8986 /* Assets.xcassets in Resources */,
+				77573B53291FCB9A00F869AC /* winGame.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +424,7 @@
 				3EA29007291BF08E00B5159F /* ScoreTableViewCell.swift in Sources */,
 				7732B553291E3D6B002A4873 /* HelpButtonsBrain.swift in Sources */,
 				775EB903291BFF5F00D5FAC0 /* AnswerButtons.swift in Sources */,
+				77573B49291FCAFB00F869AC /* SoundModel.swift in Sources */,
 				77C57DF52916A9060041746B /* StartButton.swift in Sources */,
 				3E90DA62291BEE6D00D0CB4D /* ScoresTableView.swift in Sources */,
 				3E8DC9F5291CC9AD0097C091 /* ContinueButton.swift in Sources */,
@@ -402,12 +438,12 @@
 				77C57E03291797C90041746B /* RulesVC.swift in Sources */,
 				77C57E062917984D0041746B /* RulesTextLabel.swift in Sources */,
 				7732B555291E46AE002A4873 /* ScoresVC.swift in Sources */,
-				77C57E57291A6F610041746B /* TimerSetUp.swift in Sources */,
 				77C57E082917995E0041746B /* AgreeButton.swift in Sources */,
 				77C57E0F2917C7B70041746B /* GradientView.swift in Sources */,
 				77C57E2F29194BCB0041746B /* StatusLabel.swift in Sources */,
 				77C57E29291946350041746B /* QuestionBrain.swift in Sources */,
 				77C57E21291909130041746B /* PrizeCollectionViewCell.swift in Sources */,
+				77573B5B291FE52800F869AC /* TimerLabel.swift in Sources */,
 				77C57DF32916A7430041746B /* NameTextField.swift in Sources */,
 				3E8596B5291CE53B00127CB3 /* Settings.swift in Sources */,
 				3E8596B7291CE57200127CB3 /* UserDefaults + extension.swift in Sources */,
