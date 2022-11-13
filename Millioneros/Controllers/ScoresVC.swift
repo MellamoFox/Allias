@@ -72,10 +72,12 @@ class ScoresVC: UIViewController {
     @objc private func userDecide(_ sender: UIButton) {
         switch userResults {
         case true:
-            player.stop()
             _ = navigationController?.popViewController(animated: true)
         default :
-            print("GameOver")
+            _ = self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            _ = self.navigationController?.popToRootViewController(animated: true)
+
+
 
         }
     }
