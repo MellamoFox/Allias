@@ -47,13 +47,15 @@ class ScoresVC: UIViewController {
             
             userDefaults.recordsArray?.append(yourWin)
             
-            for value in userDefaults.recordsArray! {
+            guard var dataArray = userDefaults.recordsArray else { return }
+            for value in dataArray {
                 if value == 0 {
-                    userDefaults.recordsArray!.remove(at: value)
+                    
+                    dataArray.remove(at: value)
                 }
             }
             
-            let setting = Settings(name: textTextField, recordsArray: userDefaults.recordsArray)
+            let setting = Settings(name: textTextField, recordsArray: dataArray)
             UserDefaults.standard.set(encodable: setting, forKey: "settings")
             
             print(" DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD\(setting.recordsArray!)")

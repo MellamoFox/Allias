@@ -50,7 +50,7 @@ class WelcomeVC: UIViewController {
         setupViews()
         setConstraints()
         
-//        resetDefaults()
+        resetDefaults()
         
     }
     
