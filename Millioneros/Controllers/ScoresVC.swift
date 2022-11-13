@@ -8,6 +8,9 @@ class ScoresVC: UIViewController {
     
     // MARK: - Constans and Variabels
     
+    let scoreStringArray = ["0","100","200","300","500","1000","2000","4000","8000","32 000","64 000","125 000","250 000","500 000","1 000 000"]
+    let scoreIntArray = [0, 100, 200, 300, 500, 1000, 2000, 4000, 8000, 32000, 64000, 125000, 250000, 500000, 1000000]
+    
     var userResults = Bool()
     var yourWin = 0
     private var scoreTableView = UITableView()
@@ -17,15 +20,13 @@ class ScoresVC: UIViewController {
     
     weak var delegate: ScoresVCDelegate?
     
-    let scoreStringArray = ["0","100","200","300","500","1000","2000","4000","8000","32 000","64 000","125 000","250 000","500 000","1 000 000"]
-    let scoreIntArray = [0, 100, 200, 300, 500, 1000, 2000, 4000, 8000, 32000, 64000, 125000, 250000, 500000, 1000000]
-    
-    var emptyArray = [2]
+    var emptyArray = [0]
+    var textTextField = ""
     
     //MARK: - Lifecycle of Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         createTureAnswerTable()
         setupViews()
         setConstraints()
@@ -37,21 +38,57 @@ class ScoresVC: UIViewController {
         continueButton.addTarget(self, action: #selector(userDecide), for: .touchUpInside)
         backWelcomVCButton.addTarget(self, action: #selector(backWelcomeVC), for: .touchUpInside)
         scoreTableView.reloadData()
-        
-        
-        let settings = Settings(name: "fdsfsfs", recordsArray: emptyArray)
-        UserDefaults.standard.set(encodable: settings, forKey: "settings")
-        
-        let setting = UserDefaults.standard.value(Settings.self, forKey: "settings")
-        print(setting?.recordsArray)
     }
     //MARK: - Methods
+    
+    private func setUserDefaults () {
+        
+        if let userDefaults = UserDefaults.standard.value(Settings.self, forKey: "settings") {
+            
+            userDefaults.recordsArray?.append(yourWin)
+            
+            for value in userDefaults.recordsArray! {
+                if value == 0 {
+                    userDefaults.recordsArray!.remove(at: value)
+                }
+            }
+            
+            let setting = Settings(name: textTextField, recordsArray: userDefaults.recordsArray)
+            UserDefaults.standard.set(encodable: setting, forKey: "settings")
+            
+            print(" DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD\(setting.recordsArray!)")
+            
+        } else {
+    
+            
+            
+            emptyArray.append(yourWin)
+            
+            for value in emptyArray {
+                if value == 0 {
+                    emptyArray.remove(at: value)
+                }
+            }
+            
+            let settings = Settings(name: textTextField, recordsArray: emptyArray)
+            UserDefaults.standard.set(encodable: settings, forKey: "settings")
+            
+            print(" CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\(settings.recordsArray!)")
+            
+        }
+    }
+    
+    
+    
+    
     
     func checkUserResults() {
         switch userResults {
         case false : continueButton.setTitle("Попробовать еще", for: .normal)
             print(userResults)
             print(yourWin)
+            setUserDefaults()
+            
         case true : continueButton.setTitle("Продолжить", for: .normal)
             print(userResults)
             print(yourWin)
@@ -61,17 +98,16 @@ class ScoresVC: UIViewController {
     @objc private func userDecide(_ sender: UIButton) {
         switch userResults {
         case true:
-             navigationController?.popViewController(animated: true)
+            navigationController?.popViewController(animated: true)
         default :
             print("GameOver")
-
+            
         }
     }
     
     @IBAction func backWelcomeVC () {
         
-        let settings = Settings(name: "fdsfsfs", recordsArray: emptyArray)
-        UserDefaults.standard.set(encodable: settings, forKey: "settings")
+        setUserDefaults()
         navigationController?.popToRootViewController(animated: false)
     }
     
@@ -154,8 +190,6 @@ extension ScoresVC: UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ScoreTableViewCell", for: indexPath) as? ScoreTableViewCell else { return  UITableViewCell () }
         
-        
-       
         cell.backgroundColor = .clear
         cell.contentView.backgroundColor = .clear
         
@@ -182,7 +216,7 @@ extension ScoresVC: UITableViewDataSource {
         
         cell.addScoreLabel(text: scoreStringArray[indexPath.row])
         cell.createConstraint()
-    
+        
         return cell
     }
 }

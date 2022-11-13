@@ -18,10 +18,12 @@ class PlayVC: UIViewController {
     private let questionLabel = QuestionLabel()
     private var questionBrain = QuestionBrain()
     private let gradientView = GradientView()
-    private let resultVC = ScoresVC()
+    private let scoresVC = ScoresVC()
     private let helpButtonsBrain = HelpButtonsBrain()
+    
     var mistakeBool = false
     var takeMoney = true
+    var textTextField = ""
     
     private lazy var stackView = UIStackView(arrangedSubviews: [answerButtonsArray[0],answerButtonsArray[1]],
                                              axis: .vertical,
@@ -132,10 +134,10 @@ class PlayVC: UIViewController {
                 mistakeBool = false
                 showHappyAlert(score: self.yourWin)
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: { [self] in
-                    resultVC.userResults = self.userResults
-                    resultVC.yourWin = self.yourWin
-                    
-                    self.navigationController?.pushViewController(self.resultVC, animated: true)
+                    scoresVC.userResults = self.userResults
+                    scoresVC.yourWin = self.yourWin
+                    scoresVC.textTextField = self.textTextField
+                    self.navigationController?.pushViewController(self.scoresVC, animated: true)
                     self.questionBrain.nextQuestion()
                     self.updateUI(buttonAnswer: answerButtonsArray)
                 })
@@ -148,9 +150,10 @@ class PlayVC: UIViewController {
                 default : yourWin = 0
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: { [self] in
-                    resultVC.userResults = self.userResults
-                    resultVC.yourWin = self.yourWin
-                    self.navigationController?.pushViewController(self.resultVC, animated: true)
+                    scoresVC.userResults = self.userResults
+                    scoresVC.yourWin = self.yourWin
+                    scoresVC.textTextField = self.textTextField
+                    self.navigationController?.pushViewController(self.scoresVC, animated: true)
                 })
                 mistakeBool = false
             }

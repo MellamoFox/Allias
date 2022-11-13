@@ -50,7 +50,7 @@ class WelcomeVC: UIViewController {
         setupViews()
         setConstraints()
         
-        resetDefaults()
+//        resetDefaults()
         
     }
     
@@ -66,8 +66,6 @@ class WelcomeVC: UIViewController {
     
     func addStopAlert(title: String, message: String) {
         
-
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default)
         
@@ -82,15 +80,17 @@ class WelcomeVC: UIViewController {
         switch userChoice {
             
         case rulesButton.title(for: .normal)! :
+            
             let rulesVC = RulesVC()
             navigationController?.pushViewController(rulesVC, animated: true)
             
         case startButton.title(for: .normal)! :
+            
             let playVC = PlayVC()
+//            let settings = Settings(name: textTextField, recordsArray: arrayUserDefault)
+//            UserDefaults.standard.set(encodable: settings, forKey: "settings")
             
-            let settings = Settings(name: textTextField, recordsArray: arrayUserDefault)
-            UserDefaults.standard.set(encodable: settings, forKey: "settings")
-            
+            playVC.textTextField = self.textTextField
 //            print(startButton.title(for: .normal)!)
             self.navigationController?.pushViewController(playVC, animated: true)
             // - temp for testinc score VC as stackView
@@ -98,11 +98,9 @@ class WelcomeVC: UIViewController {
             
             let settings = UserDefaults.standard.value(Settings.self, forKey: "settings")
             if settings != nil {
-                
                 let resultVC = ResultVC()
                 print(startButton.title(for: .normal)!)
                 navigationController?.pushViewController(resultVC, animated: true)
-                
             } else {
 
                 if settings?.recordsArray == nil {
@@ -117,13 +115,13 @@ class WelcomeVC: UIViewController {
     }
     
     @objc func inputTextChange() {
+        
+        
+        
         guard let text = nameTextField.text else { return }
         print(text)
         
-    
-        let setting = Settings(name: text, recordsArray: [0])
-        UserDefaults.standard.set(encodable: setting, forKey: "settings")
-        
+        textTextField = text
         print(textTextField)
         
         if text.isValid(validityType){
@@ -149,11 +147,6 @@ class WelcomeVC: UIViewController {
     }
     
 }
-
-
-
-
-
 
 //MARK: - SetConstraints
 
