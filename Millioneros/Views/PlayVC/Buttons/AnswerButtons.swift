@@ -24,6 +24,8 @@ class AnswerButtons: UIButton {
     }
     
      func createButtons() {
+         answerButtonsArray = [UIButton]()
+         print(answerButtonsArray)
          for _ in 0..<4 {
             let button = UIButton()
             button.translatesAutoresizingMaskIntoConstraints = false

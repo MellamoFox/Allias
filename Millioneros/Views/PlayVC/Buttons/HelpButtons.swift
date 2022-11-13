@@ -22,6 +22,8 @@ class HelpButtons: UIButton {
     }
     
     private func createButtons() {
+        helpButtonsArray = [UIButton]()
+        print(helpButtonsArray)
         for i in helpButtons {
             let button = UIButton()
             button.backgroundColor = .black
